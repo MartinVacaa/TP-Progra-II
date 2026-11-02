@@ -28,7 +28,7 @@ namespace SistemaRepositroy.Domain
         public Alumno? Alumno { get; set; }
 
         [ForeignKey(nameof(CarreraId))]
-        [JsonIgnore]
+        
         public Carrera? Carrera { get; set; }
     }
 }

@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "WebApiSistema.Controllers.AlumnoController",
+    "Method": "GetAllASync",
+    "RelativePath": "api/Alumno",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

@@ -54,8 +54,7 @@
               "RelativeToolTip": "SistemaRepository\\Data\\SistemaDbContext.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAYwA0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T23:16:09.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-27T23:16:09.938Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Inscripcion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T23:10:51.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-27T23:10:51.805Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Carrera.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T23:10:41.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-27T23:10:41.05Z"
             },
             {
               "$type": "Document",
@@ -93,8 +90,7 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Materia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T23:10:31.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-27T23:10:31.319Z"
             },
             {
               "$type": "Document",
@@ -106,8 +102,7 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Alumno.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAwwDQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T23:10:25.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-27T23:10:25.271Z"
             },
             {
               "$type": "Document",
@@ -119,8 +114,7 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Profesor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T23:10:16.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-27T23:10:16.181Z"
             },
             {
               "$type": "Document",
@@ -132,8 +126,7 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Nota.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T23:10:10.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-27T23:10:10.358Z"
             },
             {
               "$type": "Document",

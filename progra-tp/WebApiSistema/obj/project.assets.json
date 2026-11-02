@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net8.0": {
       "Azure.Core/1.35.0": {
@@ -1072,6 +1072,20 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "SistemaRepository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7"
+        },
+        "compile": {
+          "bin/placeholder/SistemaRepository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SistemaRepository.dll": {}
         }
       }
     }
@@ -3175,12 +3189,18 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "SistemaRepository/1.0.0": {
+      "type": "project",
+      "path": "../SistemaRepository/SistemaRepository.csproj",
+      "msbuildProject": "../SistemaRepository/SistemaRepository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.EntityFrameworkCore >= 8.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.7",
+      "SistemaRepository >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -3214,8 +3234,13 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\SistemaRepository.csproj": {
+              "projectPath": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\SistemaRepository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3228,10 +3253,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.400"
     },
     "frameworks": {
       "net8.0": {
+        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
@@ -3266,7 +3292,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.318/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
