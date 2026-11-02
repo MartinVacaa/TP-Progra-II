@@ -39,6 +39,8 @@ namespace SistemaRepository.Domain
         [EmailAddress(ErrorMessage = "El email no es válido")]
         public string? Email { get; set; }
 
+       
+
         // Navegación
         [ForeignKey(nameof(UsuarioId))]
         [JsonIgnore]

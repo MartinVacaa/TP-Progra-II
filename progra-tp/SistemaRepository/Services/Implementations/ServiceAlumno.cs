@@ -21,5 +21,10 @@ namespace SistemaRepository.Services.Implementations
         {
             return await _repository.GetAllAsync();
         }
+
+        public async Task<decimal> GetPromedio(int id)
+        {
+            return await _repository.GetPromedioASync(id);
+        }
     }
 }

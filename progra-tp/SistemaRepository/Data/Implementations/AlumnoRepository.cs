@@ -23,5 +23,24 @@ namespace SistemaRepository.Data.Implementations
         {
             return await _context.Alumnos.Include(a => a.Inscripciones).ThenInclude(i => i.Carrera).ToListAsync();
         }
+
+        public async Task<Alumno?> GetAlumnoBYId(int id)
+        {
+            return await _context.Alumnos.Include(a=>a.Notas).FirstOrDefaultAsync(a => a.Id == id);
+        }
+
+        public async Task<decimal> GetPromedioASync(int id)
+        {
+            var alumno = await  GetAlumnoBYId(id);
+            if(alumno== null)
+            {
+                return 0m;
+            }
+            int cantnotas = alumno.Notas.Count();
+            var promedio = (alumno.Notas.Sum(n => n.Valor) / cantnotas);
+
+
+            return promedio;
+        }
     }
 }

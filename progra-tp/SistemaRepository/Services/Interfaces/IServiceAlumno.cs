@@ -11,5 +11,7 @@ namespace SistemaRepository.Services.Interfaces
     {
 
         Task<List<Alumno>> GetAllASync();
+
+        Task<decimal> GetPromedio(int id);
     }
 }

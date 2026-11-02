@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\webapisistema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|solutionrelative:webapisistema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\data\\implementations\\alumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\data\\implementations\\alumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\data\\interfaces\\ialumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\data\\interfaces\\ialumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\alumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\alumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\webapisistema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|solutionrelative:webapisistema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\webapisistema\\webapisistema.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|solutionrelative:webapisistema\\webapisistema.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\webapisistema\\controllers\\alumnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|solutionrelative:webapisistema\\controllers\\alumnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\inscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\inscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\data\\implementations\\alumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\data\\implementations\\alumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\carrera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\carrera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\services\\implementations\\servicealumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,12 +31,28 @@
       "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\services\\interfaces\\iservicealumno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\data\\sistemadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\data\\sistemadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\webapisistema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|solutionrelative:webapisistema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\data\\interfaces\\ialumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\data\\interfaces\\ialumnorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\webapisistema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|solutionrelative:webapisistema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\webapisistema\\webapisistema.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F38151EF-D04A-4B1C-A0F3-08ABEA9267F5}|WebApiSistema\\WebApiSistema.csproj|solutionrelative:webapisistema\\webapisistema.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\inscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\inscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\carrera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\carrera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\data\\sistemadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\data\\sistemadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|solutionrelative:sistemarepository\\domain\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDB71C57-4485-4643-AC8E-D5127151303C}|SistemaRepository\\SistemaRepository.csproj|c:\\users\\operador\\onedrive\\documentos\\progra ii\\tp progra ii\\tp-progra-ii\\progra-tp\\sistemarepository\\domain\\materia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,56 +74,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AlumnoController.cs",
-              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\Controllers\\AlumnoController.cs",
-              "RelativeDocumentMoniker": "WebApiSistema\\Controllers\\AlumnoController.cs",
-              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\Controllers\\AlumnoController.cs",
-              "RelativeToolTip": "WebApiSistema\\Controllers\\AlumnoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:48:44.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IServiceAlumno.cs",
-              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
-              "RelativeDocumentMoniker": "SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
-              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
-              "RelativeToolTip": "SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:46:35.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "AlumnoRepository.cs",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Data\\Implementations\\AlumnoRepository.cs",
               "RelativeDocumentMoniker": "SistemaRepository\\Data\\Implementations\\AlumnoRepository.cs",
               "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Data\\Implementations\\AlumnoRepository.cs",
               "RelativeToolTip": "SistemaRepository\\Data\\Implementations\\AlumnoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-01T22:42:23.051Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "IAlumnoRepository.cs",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Data\\Interfaces\\IAlumnoRepository.cs",
               "RelativeDocumentMoniker": "SistemaRepository\\Data\\Interfaces\\IAlumnoRepository.cs",
               "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Data\\Interfaces\\IAlumnoRepository.cs",
               "RelativeToolTip": "SistemaRepository\\Data\\Interfaces\\IAlumnoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-01T22:37:26.189Z",
               "EditorCaption": ""
@@ -131,19 +105,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Carrera.cs",
-              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Carrera.cs",
-              "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Carrera.cs",
-              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Carrera.cs",
-              "RelativeToolTip": "SistemaRepository\\Domain\\Carrera.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:36:45.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\Program.cs",
               "RelativeDocumentMoniker": "WebApiSistema\\Program.cs",
@@ -156,7 +117,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Alumno.cs",
+              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Alumno.cs",
+              "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Alumno.cs",
+              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Alumno.cs",
+              "RelativeToolTip": "SistemaRepository\\Domain\\Alumno.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwCkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T22:36:45.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceAlumno.cs",
+              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
+              "RelativeDocumentMoniker": "SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
+              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
+              "RelativeToolTip": "SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T22:47:11.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IServiceAlumno.cs",
+              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
+              "RelativeDocumentMoniker": "SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
+              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
+              "RelativeToolTip": "SistemaRepository\\Services\\Interfaces\\IServiceAlumno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T22:46:35.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\appsettings.json",
               "RelativeDocumentMoniker": "WebApiSistema\\appsettings.json",
@@ -164,50 +164,60 @@
               "RelativeToolTip": "WebApiSistema\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-01T22:50:35.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T22:50:35.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Alumno.cs",
-              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Alumno.cs",
-              "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Alumno.cs",
-              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Alumno.cs",
-              "RelativeToolTip": "SistemaRepository\\Domain\\Alumno.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAowC4AAAATAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Nota.cs",
+              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Nota.cs",
+              "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Nota.cs",
+              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Nota.cs",
+              "RelativeToolTip": "SistemaRepository\\Domain\\Nota.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:36:45.871Z",
+              "WhenOpened": "2026-11-01T22:36:45.887Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "AlumnoController.cs",
+              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\Controllers\\AlumnoController.cs",
+              "RelativeDocumentMoniker": "WebApiSistema\\Controllers\\AlumnoController.cs",
+              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\Controllers\\AlumnoController.cs",
+              "RelativeToolTip": "WebApiSistema\\Controllers\\AlumnoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T22:48:44.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Carrera.cs",
+              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Carrera.cs",
+              "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Carrera.cs",
+              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Carrera.cs",
+              "RelativeToolTip": "SistemaRepository\\Domain\\Carrera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T22:36:45.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "WebApiSistema",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\WebApiSistema.csproj",
               "RelativeDocumentMoniker": "WebApiSistema\\WebApiSistema.csproj",
               "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\WebApiSistema\\WebApiSistema.csproj",
               "RelativeToolTip": "WebApiSistema\\WebApiSistema.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-01T23:37:38.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T23:37:38.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ServiceAlumno.cs",
-              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
-              "RelativeDocumentMoniker": "SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
-              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
-              "RelativeToolTip": "SistemaRepository\\Services\\Implementations\\ServiceAlumno.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:47:11.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Inscripcion.cs",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Inscripcion.cs",
               "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Inscripcion.cs",
@@ -215,12 +225,11 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Inscripcion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:36:45.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T22:36:45.871Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "SistemaDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Data\\SistemaDbContext.cs",
               "RelativeDocumentMoniker": "SistemaRepository\\Data\\SistemaDbContext.cs",
@@ -228,8 +237,7 @@
               "RelativeToolTip": "SistemaRepository\\Data\\SistemaDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:36:45.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T22:36:45.553Z"
             },
             {
               "$type": "Document",
@@ -245,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Profesor.cs",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Profesor.cs",
               "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Profesor.cs",
@@ -257,19 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Nota.cs",
-              "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Nota.cs",
-              "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Nota.cs",
-              "ToolTip": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Nota.cs",
-              "RelativeToolTip": "SistemaRepository\\Domain\\Nota.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:36:45.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\Operador\\OneDrive\\Documentos\\PROGRA II\\TP PROGRA II\\TP-Progra-II\\progra-tp\\SistemaRepository\\Domain\\Usuario.cs",
               "RelativeDocumentMoniker": "SistemaRepository\\Domain\\Usuario.cs",
@@ -277,8 +273,7 @@
               "RelativeToolTip": "SistemaRepository\\Domain\\Usuario.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T22:36:45.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T22:36:45.887Z"
             }
           ]
         }

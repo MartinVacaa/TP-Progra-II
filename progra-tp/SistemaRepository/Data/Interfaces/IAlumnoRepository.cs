@@ -10,5 +10,8 @@ namespace SistemaRepository.Data.Interfaces
     public interface IAlumnoRepository
     {
         Task<List<Alumno>> GetAllAsync();
+        Task<decimal> GetPromedioASync(int id);
+
+        Task<Alumno?> GetAlumnoBYId(int id);
     }
 }
