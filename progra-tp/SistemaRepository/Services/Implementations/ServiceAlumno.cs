@@ -17,14 +17,29 @@ namespace SistemaRepository.Services.Implementations
         {
             _repository = repository;
         }
+
+        public Task<List<Alumno>> AlumnoNotas()
+        {
+           return _repository.AlumnosNotas();
+        }
+
+        public async Task<bool> CreateAlumno(Alumno alumno)
+        {
+            if (alumno.Email == null)
+            {
+                throw new ArgumentException("El mail del alumno no puede ser nulo");
+            }
+            return await _repository.CreateAlumno(alumno);
+        }
+
         public async Task<List<Alumno>> GetAllASync()
         {
             return await _repository.GetAllAsync();
         }
 
-        public async Task<decimal> GetPromedio(int id)
+        public async Task<decimal> GetPromedio(string legajo)
         {
-            return await _repository.GetPromedioASync(id);
+            return await _repository.GetPromedioASync(legajo);
         }
     }
 }

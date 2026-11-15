@@ -33,7 +33,7 @@ namespace SistemaRepository.Domain
         [JsonIgnore]
         public Profesor? Profesor { get; set; }
 
-        [JsonIgnore]
+        
         public ICollection<Nota> Notas { get; set; } = new List<Nota>();
     }
 }

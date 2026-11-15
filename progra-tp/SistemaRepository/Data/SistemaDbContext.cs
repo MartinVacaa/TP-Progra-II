@@ -4,9 +4,9 @@ using SistemaRepositroy.Domain;
 
 namespace SistemaAcademico.Data
 {
-    public class SistemaDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public SistemaDbContext(DbContextOptions<SistemaDbContext> options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
 
@@ -28,12 +28,21 @@ namespace SistemaAcademico.Data
             {
                 e.Property(u => u.Activo).HasDefaultValue(true);
                 e.ToTable(t => t.HasCheckConstraint("CK_Usuarios_Rol", "Rol IN ('ALUMNO', 'ENCARGADO')"));
+
+                // Solo puede existir un ENCARGADO
+                e.HasIndex(u => u.Rol)
+                 .IsUnique()
+                 .HasFilter("[Rol] = 'ENCARGADO'")
+                 .HasDatabaseName("UX_Usuarios_UnSoloEncargado");
             });
 
             // ---------------- ALUMNOS ----------------
-            // Relación 1 a 1: cada alumno tiene un único usuario
             modelBuilder.Entity<Alumno>(e =>
             {
+                // Legajo como clave primaria
+                e.HasKey(a => a.Legajo);
+
+                // Relación 1 a 1: cada alumno tiene un único usuario
                 e.HasOne(a => a.Usuario)
                  .WithOne(u => u.Alumno)
                  .HasForeignKey<Alumno>(a => a.UsuarioId)
@@ -61,7 +70,7 @@ namespace SistemaAcademico.Data
 
                 e.HasOne(i => i.Alumno)
                  .WithMany(a => a.Inscripciones)
-                 .HasForeignKey(i => i.AlumnoId)
+                 .HasForeignKey(i => i.Legajo)
                  .OnDelete(DeleteBehavior.Restrict);
 
                 e.HasOne(i => i.Carrera)
@@ -83,7 +92,7 @@ namespace SistemaAcademico.Data
 
                 e.HasOne(n => n.Alumno)
                  .WithMany(a => a.Notas)
-                 .HasForeignKey(n => n.AlumnoId)
+                 .HasForeignKey(n => n.Legajo)
                  .OnDelete(DeleteBehavior.Restrict);
 
                 e.HasOne(n => n.Materia)

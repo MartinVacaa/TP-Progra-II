@@ -10,8 +10,13 @@ namespace SistemaRepository.Data.Interfaces
     public interface IAlumnoRepository
     {
         Task<List<Alumno>> GetAllAsync();
-        Task<decimal> GetPromedioASync(int id);
+        Task<decimal> GetPromedioASync(string legajo);
 
-        Task<Alumno?> GetAlumnoBYId(int id);
+        Task<Alumno?> GetAlumnoBYId(string legajo);
+
+        Task<bool> CreateAlumno(Alumno alumno);
+        Task<bool> DeleteAlumno(string legajo);
+
+        Task<List<Alumno>> AlumnosNotas();
     }
 }

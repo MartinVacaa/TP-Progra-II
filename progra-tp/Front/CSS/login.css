@@ -1,0 +1,103 @@
+:root {
+    --fondo: #dfe8ec;
+    --tarjeta: #f8fafb;
+    --primario: #4a7c8c;
+    --primario-oscuro: #3a6472;
+    --texto: #2c3e46;
+    --texto-suave: #667a83;
+    --borde: #c9d6dc;
+}
+ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+ 
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 32px;
+    background-color: var(--tarjeta);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(44, 62, 70, 0.12);
+}
+ 
+.login-header {
+    margin-bottom: 28px;
+    text-align: center;
+}
+ 
+.login-header h1 {
+    margin-bottom: 6px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primario-oscuro);
+}
+ 
+.login-header p {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+ 
+.campo {
+    margin-bottom: 18px;
+}
+ 
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+ 
+.campo input {
+    width: 100%;
+    padding: 11px 12px;
+    font-size: 1rem;
+    color: var(--texto);
+    background-color: #ffffff;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+ 
+.campo input:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 3px rgba(74, 124, 140, 0.2);
+}
+ 
+.btn-ingresar {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--primario);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+ 
+.btn-ingresar:hover {
+    background-color: var(--primario-oscuro);
+}
+ 
+.btn-ingresar:focus-visible {
+    outline: 3px solid rgba(74, 124, 140, 0.4);
+    outline-offset: 2px;
+}

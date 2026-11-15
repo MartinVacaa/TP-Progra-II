@@ -11,18 +11,44 @@
   },
   {
     "ContainingType": "WebApiSistema.Controllers.AlumnoController",
+    "Method": "CreateAlumno",
+    "RelativePath": "api/Alumno",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WebApiSistema.DTO.AlumnoCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiSistema.Controllers.AlumnoController",
     "Method": "GetPromedio",
-    "RelativePath": "api/Alumno/{id}",
+    "RelativePath": "api/Alumno/{legajo}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "legajo",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiSistema.Controllers.AlumnoController",
+    "Method": "AlumnosNotas",
+    "RelativePath": "api/Alumno/notas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

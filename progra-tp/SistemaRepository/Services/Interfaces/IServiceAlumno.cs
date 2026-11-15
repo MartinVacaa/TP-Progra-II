@@ -12,6 +12,10 @@ namespace SistemaRepository.Services.Interfaces
 
         Task<List<Alumno>> GetAllASync();
 
-        Task<decimal> GetPromedio(int id);
+        Task<decimal> GetPromedio(string legajo);
+
+        Task<bool> CreateAlumno(Alumno alumno);
+
+        Task<List<Alumno>> AlumnoNotas();
     }
 }

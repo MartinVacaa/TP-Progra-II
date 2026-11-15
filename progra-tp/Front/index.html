@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Académico</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <div class="layout-container">
+        <!-- BARRA LATERAL (Fija en todo momento) -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>Panel Académico</h2>
+            </div>
+            <nav class="menu">
+                <button class="nav-btn active" onclick="navegarA('alumnos')">
+                    📚 Alumnos
+                </button>
+                <button class="nav-btn" onclick="window.location.href='notas.html'">
+                    📝 Notas
+                </button>
+                <button class="nav-btn btn-logout" onclick="cerrarSesion()">
+                    🚪 Cerrar Sesión
+                </button>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL (Varía según el botón tocado) -->
+        <main class="main-content">
+            <header class="top-header">
+                <h1 id="tituloSeccion">Listado de Alumnos</h1>
+            </header>
+            
+            <!-- Aquí se inyecta la tabla o datos de la sección elegida -->
+            <section id="vistaDinamica">
+                <!-- Se llena mediante JavaScript -->
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/alumnos.js"></script>
+</body>
+</html>

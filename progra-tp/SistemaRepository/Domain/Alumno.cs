@@ -9,19 +9,18 @@ namespace SistemaRepository.Domain
 {
     [Table("Alumnos")]
     [Index(nameof(UsuarioId), IsUnique = true)]
-    [Index(nameof(Legajo), IsUnique = true)]
     [Index(nameof(Dni), IsUnique = true)]
     public class Alumno
     {
+        // El legajo es la clave primaria (no es autonumérico, lo carga el encargado)
         [Key]
-        public int Id { get; set; }
-
-        [Required]
-        public int UsuarioId { get; set; }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required(ErrorMessage = "El legajo es obligatorio")]
         [StringLength(20)]
         public string Legajo { get; set; } = string.Empty;
+
+        [Required]
+        public int UsuarioId { get; set; }
 
         [Required(ErrorMessage = "El DNI es obligatorio")]
         [StringLength(15)]
@@ -38,8 +37,6 @@ namespace SistemaRepository.Domain
         [StringLength(120)]
         [EmailAddress(ErrorMessage = "El email no es válido")]
         public string? Email { get; set; }
-
-       
 
         // Navegación
         [ForeignKey(nameof(UsuarioId))]

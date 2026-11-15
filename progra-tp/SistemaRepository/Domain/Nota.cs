@@ -5,14 +5,17 @@ using System.Text.Json.Serialization;
 
 namespace SistemaRepository.Domain
 {
+
     [Table("Notas")]
     public class Nota
     {
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        public int AlumnoId { get; set; }
+        // FK al alumno (por legajo)
+        [Required(ErrorMessage = "El legajo es obligatorio")]
+        [StringLength(20)]
+        public string Legajo { get; set; } = string.Empty;
 
         [Required]
         public int MateriaId { get; set; }
@@ -34,12 +37,13 @@ namespace SistemaRepository.Domain
         public DateTime Fecha { get; set; } = DateTime.Today;
 
         // Navegación
-        [ForeignKey(nameof(AlumnoId))]
+        [ForeignKey(nameof(Legajo))]
         [JsonIgnore]
         public Alumno? Alumno { get; set; }
 
         [ForeignKey(nameof(MateriaId))]
         [JsonIgnore]
         public Materia? Materia { get; set; }
+
     }
 }

@@ -21,7 +21,7 @@ namespace SistemaRepository.Domain
         public byte DuracionAnios { get; set; }   // TINYINT en SQL Server
 
         // Navegación
-        [JsonIgnore]
+        
         public ICollection<Materia> Materias { get; set; } = new List<Materia>();
 
         [JsonIgnore]

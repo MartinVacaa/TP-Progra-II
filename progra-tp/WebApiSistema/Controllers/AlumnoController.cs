@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SistemaRepository.Domain;
 using SistemaRepository.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using WebApiSistema.DTO;
 
 namespace WebApiSistema.Controllers
 {
@@ -10,8 +13,9 @@ namespace WebApiSistema.Controllers
     {
 
         private readonly IServiceAlumno _service;
+        private readonly PasswordHasher<Usuario> _hasher = new();
 
-            public AlumnoController(IServiceAlumno service)
+        public AlumnoController(IServiceAlumno service)
         {
             _service = service;
         }
@@ -23,10 +27,10 @@ namespace WebApiSistema.Controllers
             return Ok(alumnos);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetPromedio(int id)
+        [HttpGet("{legajo}")]
+        public async Task<IActionResult> GetPromedio(string legajo)
         {
-            var resultado= await _service.GetPromedio(id);
+            var resultado= await _service.GetPromedio(legajo);
 
             if (resultado <= 0)
             {
@@ -34,6 +38,54 @@ namespace WebApiSistema.Controllers
             }
 
             return Ok(resultado);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAlumno([FromBody]AlumnoCreateDto dto)
+        {
+
+            var usuario = new Usuario
+            {
+                NombreUsuario = dto.NombreUsuario,
+                Rol = "ALUMNO"
+            };
+            usuario.PasswordHash = _hasher.HashPassword(usuario, dto.Password);
+
+
+
+            var alumno = new Alumno
+            {
+               
+                Nombre = dto.Nombre,
+                Apellido = dto.Apellido,
+                Email = dto.Email,
+                Dni = dto.Dni,
+                Usuario = usuario
+            };
+            var resultado = new AlumnoDto
+            {
+                
+                Legajo=alumno.Legajo,
+                Nombre = alumno.Nombre,
+                Apellido = alumno.Apellido,
+                Email = alumno.Email,
+                Dni = alumno.Dni,
+                NombreUsuario = alumno.Usuario.NombreUsuario
+            };
+
+            bool result=await _service.CreateAlumno(alumno);
+            if (!result)
+            {
+                return BadRequest("No se ha podido crear el alumno nuevo");
+            }
+            return StatusCode(201,new { message=$"Se ha creado el alumno con exito",resultado });
+           
+        }
+        [HttpGet("notas")]
+        public async Task<IActionResult> AlumnosNotas()
+        {
+            var alumnos = await _service.AlumnoNotas();
+            return Ok(alumnos);
         }
     }
 }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas | Sistema Académico</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <script src="JS/notas.js" defer></script>
+</head>
+<body>
+    <div class="layout-container">
+        <!-- BARRA LATERAL (Igual que en index.html) -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>Panel Académico</h2>
+            </div>
+            <nav class="menu">
+                <button class="nav-btn" onclick="window.location.href='index.html'">
+                    📚 Alumnos
+                </button>
+                <button class="nav-btn active" onclick="window.location.href='notas.html'">
+                    📝 Notas
+                </button>
+                <button class="nav-btn btn-logout" onclick="cerrarSesion()">
+                    🚪 Cerrar Sesión
+                </button>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <header class="top-header">
+                <h1 id="tituloSeccion">Notas de los Alumnos</h1>
+            </header>
+
+            <section id="vistaNotas">
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>Alumno</th>
+                            <th>Carrera</th>
+                            <th>Materia</th>
+                            <th>Nota</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaNotas">
+                        <!-- Filas de ejemplo: borrarlas al cargar los datos desde la API -->
+                        <tr>
+                            <td>Juan Pérez</td>
+                            <td>Tecnicatura en Programación</td>
+                            <td>Programación II</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>María Gómez</td>
+                            <td>Tecnicatura en Programación</td>
+                            <td>Base de Datos</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Lucas Fernández</td>
+                            <td>Tecnicatura en Programación</td>
+                            <td>Matemática</td>
+                            <td>7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
