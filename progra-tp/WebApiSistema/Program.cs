@@ -1,9 +1,13 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using SistemaAcademico.Data;
 using SistemaRepository.Data.Implementations;
 using SistemaRepository.Data.Interfaces;
 using SistemaRepository.Services.Implementations;
 using SistemaRepository.Services.Interfaces;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +22,22 @@ var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddScoped<IAlumnoRepository, AlumnoRepository>();
 builder.Services.AddScoped<IServiceAlumno, ServiceAlumno>();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "MiApi", // Debe coincidir con el issuer que pusiste en GenerateToken
+            ValidAudience = "MIApi", // Debe coincidir con el audience que pusiste en GenerateToken
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MiClaveSuperSecreta123")) // La misma clave secreta
+        };
+    });
 
 builder.Services.AddCors(options =>
 {

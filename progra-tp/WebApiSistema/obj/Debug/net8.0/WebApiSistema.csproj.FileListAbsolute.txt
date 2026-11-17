@@ -75,3 +75,4 @@ C:\Users\Operador\OneDrive\Documentos\PROGRA II\TP PROGRA II\TP-Progra-II\progra
 C:\Users\Operador\OneDrive\Documentos\PROGRA II\TP PROGRA II\TP-Progra-II\progra-tp\WebApiSistema\obj\Debug\net8.0\WebApiSistema.pdb
 C:\Users\Operador\OneDrive\Documentos\PROGRA II\TP PROGRA II\TP-Progra-II\progra-tp\WebApiSistema\obj\Debug\net8.0\WebApiSistema.genruntimeconfig.cache
 C:\Users\Operador\OneDrive\Documentos\PROGRA II\TP PROGRA II\TP-Progra-II\progra-tp\WebApiSistema\obj\Debug\net8.0\ref\WebApiSistema.dll
+C:\Users\Operador\OneDrive\Documentos\PROGRA II\TP PROGRA II\TP-Progra-II\progra-tp\WebApiSistema\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

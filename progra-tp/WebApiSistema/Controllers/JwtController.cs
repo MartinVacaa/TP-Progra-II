@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using SistemaAcademico.Data;
 using SistemaRepository.Domain;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebApiSistema.DTO;
@@ -13,18 +15,31 @@ namespace WebApiSistema.Controllers
     [ApiController]
     public class JwtController : ControllerBase
     {
+        private readonly AppDbContext _context;
 
-        //[HttpPost]
-       // public IActionResult Login([FromBody]UserLoginDto user)
-       // {
+        public JwtController(AppDbContext context)
+        {
+                _context = context;
+        }
 
+        [HttpPost]
+         public IActionResult Login([FromBody]UserLoginDto user)
+        {
+            var usuariolog = _context.Usuarios.FirstOrDefault(u => u.NombreUsuario == user.UserName && u.PasswordHash == user.Password);
 
-       // }
+            if (usuariolog == null)
+            {
+                return Unauthorized("Usuario o contraseña incorrectas");
+            }
+            var token = GenerateToken(usuariolog);
+            return Ok(new { Token = token });
+
+        }
 
         private string GenerateToken(Usuario user)
         {
             var SecurityKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("MiClaveSuperSecreta123"));
+                Encoding.UTF8.GetBytes("EstaEsUnaClaveSuperSecretaYLargaDeMasDe32Caracteres123!"));
 
             var Credentials = new SigningCredentials(
                 SecurityKey, SecurityAlgorithms.HmacSha256);

@@ -87,5 +87,17 @@ namespace WebApiSistema.Controllers
             var alumnos = await _service.AlumnoNotas();
             return Ok(alumnos);
         }
+        [HttpDelete("{legajo}")]
+        public async Task<IActionResult> DeleteAlumnmo(string legajo)
+        {
+            bool result = await _service.DeleteAlumno(legajo);
+
+            if (!result)
+            {
+                return BadRequest($"No se ha podido borrar el alumno con el LEGAJO: {legajo}");
+            }
+
+            return Ok("Se ha borrado exitosamente el alumno");
+        }
     }
 }

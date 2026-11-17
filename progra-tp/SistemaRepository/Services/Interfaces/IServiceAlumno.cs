@@ -17,5 +17,7 @@ namespace SistemaRepository.Services.Interfaces
         Task<bool> CreateAlumno(Alumno alumno);
 
         Task<List<Alumno>> AlumnoNotas();
+
+        Task<bool> DeleteAlumno(string legajo);
     }
 }

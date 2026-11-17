@@ -43,12 +43,44 @@
   },
   {
     "ContainingType": "WebApiSistema.Controllers.AlumnoController",
+    "Method": "DeleteAlumnmo",
+    "RelativePath": "api/Alumno/{legajo}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "legajo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiSistema.Controllers.AlumnoController",
     "Method": "AlumnosNotas",
     "RelativePath": "api/Alumno/notas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiSistema.Controllers.JwtController",
+    "Method": "Login",
+    "RelativePath": "api/Jwt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "WebApiSistema.DTO.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

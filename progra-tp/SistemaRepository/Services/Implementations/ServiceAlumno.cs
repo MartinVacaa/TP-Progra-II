@@ -32,6 +32,11 @@ namespace SistemaRepository.Services.Implementations
             return await _repository.CreateAlumno(alumno);
         }
 
+        public async Task<bool> DeleteAlumno(string legajo)
+        {
+            return await _repository.DeleteAlumno(legajo);
+        }
+
         public async Task<List<Alumno>> GetAllASync()
         {
             return await _repository.GetAllAsync();
