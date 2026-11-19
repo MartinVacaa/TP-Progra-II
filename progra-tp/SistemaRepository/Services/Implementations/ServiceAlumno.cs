@@ -1,5 +1,6 @@
 ﻿using SistemaRepository.Data.Interfaces;
 using SistemaRepository.Domain;
+using SistemaRepository.DTO;
 using SistemaRepository.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace SistemaRepository.Services.Implementations
             _repository = repository;
         }
 
-        public Task<List<Alumno>> AlumnoNotas()
+        public Task<List<AlumnoNotaDTO>> AlumnoNotas()
         {
            return _repository.AlumnosNotas();
         }

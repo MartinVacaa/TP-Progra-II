@@ -68,6 +68,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApiSistema.Controllers.EncargadoController",
+    "Method": "GetPromedios",
+    "RelativePath": "api/Encargado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiSistema.Controllers.EncargadoController",
+    "Method": "PorcentajeDesaprobados",
+    "RelativePath": "api/Encargado/Desaprobados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApiSistema.Controllers.JwtController",
     "Method": "Login",
     "RelativePath": "api/Jwt",

@@ -1,4 +1,5 @@
 ﻿using SistemaRepository.Domain;
+using SistemaRepository.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,6 @@ namespace SistemaRepository.Data.Interfaces
         Task<bool> CreateAlumno(Alumno alumno);
         Task<bool> DeleteAlumno(string legajo);
 
-        Task<List<Alumno>> AlumnosNotas();
+        Task<List<AlumnoNotaDTO>> AlumnosNotas();
     }
 }

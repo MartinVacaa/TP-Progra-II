@@ -16,29 +16,23 @@ if(!response.ok){
 function mostrarNotas(alumnos){
      listanot.innerHTML=''
 alumnos.forEach(alumno => {
-        // Como 'inscripciones', 'materias' y 'notas' son listas (arrays), 
+        listanot.innerHTML+=`
+        <tr>
+        <td>${alumno.legajo}</td>
+        <td>${alumno.nombre}</td>
+        <td>${alumno.apellido}</td>
+        <td>${alumno.carrera}</td>
+        <td>${alumno.materia}</td>
+        <td>${alumno.nota}</td>
+        <td>${alumno.tipo}</td>
+        </tr>
+        
+        `// Como 'inscripciones', 'materias' y 'notas' son listas (arrays), 
         // recorremos el JSON anidado de forma segura:
-        alumno.inscripciones.forEach(inscripcion => {
-            if (inscripcion.carrera && inscripcion.carrera.materias) {
-                inscripcion.carrera.materias.forEach(materia => {
-                    if (materia.notas) {
-                        materia.notas.forEach(nota => {
-                            // Acumulamos las filas con +=
-                            listanot.innerHTML += `
-                                <tr>
-                                    <td>${alumno.nombre} ${alumno.apellido}</td>
-                                    <td>${inscripcion.carrera.nombre}</td>
-                                    <td>${materia.nombre}</td>
-                                    <td>${nota.valor}</td>
-                                    <td>${nota.tipo}</td>
-                                </tr>
-                            `;
-                        });
-                    }
-                });
-            }
-        });
-    });
+
+   
+
+    })
 }
 
 

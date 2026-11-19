@@ -50,7 +50,6 @@ namespace WebApiSistema.Controllers
             {
                 new Claim(JwtRegisteredClaimNames.Sub,user.NombreUsuario),
                 new Claim(JwtRegisteredClaimNames.Jti,IdentificadorUnico),
-
                 new Claim(ClaimTypes.Role,user.Rol)
             };
             var Token = new JwtSecurityToken(

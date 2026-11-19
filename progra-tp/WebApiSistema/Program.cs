@@ -7,6 +7,8 @@ using SistemaRepository.Data.Interfaces;
 using SistemaRepository.Services.Implementations;
 using SistemaRepository.Services.Interfaces;
 using System.Text;
+// Añade esto cerca de las líneas "builder.Services..."
+System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +23,8 @@ builder.Services.AddSwaggerGen();
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddScoped<IAlumnoRepository, AlumnoRepository>();
 builder.Services.AddScoped<IServiceAlumno, ServiceAlumno>();
+builder.Services.AddScoped<IDashBoardEncargado, EncargadoRepository>();
+builder.Services.AddScoped<IServiceEncargado, ServiceEncargado>();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
 
@@ -35,7 +39,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = "MiApi", // Debe coincidir con el issuer que pusiste en GenerateToken
             ValidAudience = "MIApi", // Debe coincidir con el audience que pusiste en GenerateToken
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MiClaveSuperSecreta123")) // La misma clave secreta
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("EstaEsUnaClaveSuperSecretaYLargaDeMasDe32Caracteres123!")) // La misma clave secreta
         };
     });
 
@@ -51,6 +55,7 @@ builder.Services.AddCors(options =>
 
 
 var app = builder.Build();
+
 app.UseCors("AllowAll");
 
 
@@ -62,6 +67,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+
 
 app.UseAuthorization();
 

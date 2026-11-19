@@ -4,6 +4,7 @@ using SistemaRepository.Domain;
 using SistemaRepository.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using WebApiSistema.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApiSistema.Controllers
 {
@@ -21,6 +22,7 @@ namespace WebApiSistema.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "ENCARGADO")]
         public async Task<IActionResult> GetAllASync() 
         {
             var alumnos= await _service.GetAllASync();
@@ -41,6 +43,7 @@ namespace WebApiSistema.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ENCARGADO")]
         public async Task<IActionResult> CreateAlumno([FromBody]AlumnoCreateDto dto)
         {
 

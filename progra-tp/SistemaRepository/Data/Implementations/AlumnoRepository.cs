@@ -2,6 +2,7 @@
 using SistemaAcademico.Data;
 using SistemaRepository.Data.Interfaces;
 using SistemaRepository.Domain;
+using SistemaRepository.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,24 @@ namespace SistemaRepository.Data.Implementations
             _context = context;
         }
 
-        public async Task<List<Alumno>> AlumnosNotas()
+        public async Task<List<AlumnoNotaDTO>> AlumnosNotas()
         {
-            return await _context.Alumnos.Include(a=>a.Inscripciones).ThenInclude(I=>I.Carrera).ThenInclude(c=>c.Materias).ThenInclude(m=>m.Notas).ToListAsync();
+            return await _context.Notas
+       .Select(n => new AlumnoNotaDTO
+       {
+           Legajo = n.Alumno.Legajo,
+           Nombre = n.Alumno.Nombre,
+           Apellido = n.Alumno.Apellido,
+           Carrera = n.Materia.Carrera.Nombre,
+           Materia = n.Materia.Nombre,
+           Nota = n.Valor,
+           Tipo= n.Tipo
+       })
+       .OrderBy(x => x.Apellido)
+       .ThenBy(x => x.Nombre)
+       .ThenBy(x => x.Carrera)
+       .ThenBy(x => x.Materia)
+       .ToListAsync();
         }
 
         public async Task<bool> CreateAlumno(Alumno alumno)
