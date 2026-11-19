@@ -42,9 +42,8 @@ function ListadoAlumno(alumnos){
             <td>${element.email}</td>
              
         </tr>
-
         `
-      
+
     });
 }
 

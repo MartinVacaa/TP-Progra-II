@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas | Sistema Académico</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <script src="JS/estadisticas.js" defer></script>
+</head>
+<body>
+    <div class="layout-container">
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>Panel Académico</h2>
+            </div>
+            <nav class="menu">
+                <button class="nav-btn" onclick="window.location.href='index.html'">
+                    📚 Alumnos
+                </button>
+                <button class="nav-btn" onclick="window.location.href='notas.html'">
+                    📝 Notas
+                </button>
+                <button class="nav-btn active" onclick="window.location.href='estadisticas.html'">
+                    📊 Estadísticas
+                </button>
+                <button class="nav-btn btn-logout" onclick="cerrarSesion()">
+                    🚪 Cerrar Sesión
+                </button>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <header class="top-header">
+                <h1 id="tituloSeccion">Estadísticas Académicas</h1>
+            </header>
+
+            <!-- TARJETAS RESUMEN -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Alumnos Registrados</h3>
+                    <div class="stat-value" id="totalAlumnos">0</div>
+                </div>
+                <div class="stat-card danger">
+                    <h3>Porcentaje de Desaprobados</h3>
+                    <div class="stat-value" id="porcentajeDesaprobados">0%</div>
+                </div>
+            </section>
+
+            <!-- TABLA DE PROMEDIOS POR ALUMNO -->
+            <section>
+                <h2 class="section-subtitle">Promedio por Alumno</h2>
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>Legajo</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Promedio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaPromedios"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
