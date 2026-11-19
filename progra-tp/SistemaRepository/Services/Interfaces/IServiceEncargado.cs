@@ -11,5 +11,6 @@ namespace SistemaRepository.Services.Interfaces
     {
         Task<List<AlumnoPromedioDTO>> TraerPromedios();
         Task<decimal> Porcentajedesaprobados();
+        Task<int> AlumnosRegistrados();
     }
 }

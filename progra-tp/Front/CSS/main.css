@@ -95,7 +95,7 @@
     color: white;
 }
 
-/* ------------------------------------------/*
+/* ------------------------------------------ */
 
 /* Cabecera con botón a la derecha */
 .top-header {
@@ -168,71 +168,297 @@
     background-color: #94a3b8;
 }
 
-/* Modal (Pantalla emergente de formulario) */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(15, 23, 42, 0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-.modal-overlay.active {
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+.btn-primary:disabled, .btn-danger:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* ---------- Barra de acciones (Registrar / Editar / Eliminar) ---------- */
+.acciones-bar {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.btn-accion {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-accion:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.2);
+}
+
+.btn-accion:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-accion:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+}
+
+.btn-accion-registrar { background: linear-gradient(135deg, #10b981, #059669); }
+.btn-accion-editar    { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+.btn-accion-eliminar  { background: linear-gradient(135deg, #f87171, #dc2626); }
+
+.seleccion-info {
+    margin-left: auto;
+    font-size: 0.88rem;
+    color: #64748b;
+}
+
+/* Filas seleccionables */
+#lista-alumnos tr {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+#lista-alumnos tr:hover {
+    background-color: #f1f5f9;
+}
+
+#lista-alumnos tr.fila-seleccionada {
+    background-color: #e0f2fe;
+    box-shadow: inset 4px 0 0 #0284c7;
+}
+
+/* ---------- Modal (Pantalla emergente de formulario) ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-card {
     background: white;
-    padding: 28px;
-    border-radius: 12px;
     width: 100%;
-    max-width: 460px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 620px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.2s ease;
 }
 
-.modal-card h2 {
-    color: #0f172a;
-    margin-bottom: 20px;
+.modal-overlay.activo .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-header h2 {
     font-size: 1.3rem;
+    color: #0f172a;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #64748b;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+}
+
+.modal-close:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 18px;
 }
 
 .form-group {
-    margin-bottom: 14px;
     display: flex;
     flex-direction: column;
+    gap: 6px;
 }
 
 .form-group label {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: #334155;
-    margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group select {
+.form-group input {
     padding: 10px 12px;
     border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 0.95rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+.form-group input:focus {
     outline: none;
-    border-color: #38bdf8;
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
 }
+
+.form-ayuda {
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group input:read-only {
+    background-color: #f1f5f9;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+/* Modo edición: se ocultan usuario y contraseña */
+.form-aviso {
+    display: none;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+#formAlumno.modo-edicion .campo-cuenta { display: none; }
+#formAlumno.modo-edicion .form-aviso   { display: block; }
 
 .modal-actions {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 26px;
+}
+
+.modal-actions-center {
+    justify-content: center;
+}
+
+/* Modal de confirmación */
+.modal-confirm {
+    max-width: 420px;
+    text-align: center;
+}
+
+.confirm-icono {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #dc2626;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-confirm h2 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.modal-confirm p {
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* Avisos (toast) */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 1100;
+}
+
+.toast.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.ok    { background: #059669; }
+.toast.error { background: #dc2626; }
+
+@media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .seleccion-info { margin-left: 0; width: 100%; }
 }
 
 /* Tarjetas de Estadísticas */

@@ -22,6 +22,12 @@ namespace SistemaRepository.Data.Implementations
                 _context = context;
         }
 
+        public async Task<int> AlumnosRegistrados()
+        {
+            return await _context.Alumnos.CountAsync();
+
+        }
+
         public async Task<decimal> PorcentajeDesaprobados()
         {
             var cantnotas = await _context.Notas.CountAsync();
@@ -45,5 +51,7 @@ namespace SistemaRepository.Data.Implementations
              .OrderByDescending(a => a.Promedio)
              .ToListAsync();
         }
+
+
     }
 }
