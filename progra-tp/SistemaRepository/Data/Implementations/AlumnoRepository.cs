@@ -98,5 +98,22 @@ namespace SistemaRepository.Data.Implementations
             return promedio;
         }
 
+        public async Task<bool> UpdateAlumno(string legajo, Alumno datosNuevos)
+        {
+            var alumnoExistente = await _context.Alumnos.FindAsync(legajo);
+
+            if (alumnoExistente == null)
+            {
+                return false;
+            }
+
+            alumnoExistente.Nombre = datosNuevos.Nombre;
+            alumnoExistente.Apellido = datosNuevos.Apellido;
+            alumnoExistente.Dni = datosNuevos.Dni;
+            alumnoExistente.Email = datosNuevos.Email;
+
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }

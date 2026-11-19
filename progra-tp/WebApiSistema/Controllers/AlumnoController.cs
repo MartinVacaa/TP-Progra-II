@@ -102,5 +102,33 @@ namespace WebApiSistema.Controllers
 
             return Ok("Se ha borrado exitosamente el alumno");
         }
+
+        [HttpPut("{legajo}")]
+        public async Task<IActionResult> UpdateAlumno(string legajo, [FromBody] AlumnoCreateDto dto)
+        {
+            var alumno = new Alumno
+            {
+                Nombre = dto.Nombre,
+                Apellido = dto.Apellido,
+                Dni = dto.Dni,
+                Email = dto.Email
+            };
+
+            try
+            {
+                bool actualizado = await _service.UpdateAlumno(legajo, alumno);
+
+                if (!actualizado)
+                {
+                    return NotFound($"No se encontró el alumno con legajo: {legajo}");
+                }
+
+                return Ok("Alumno actualizado correctamente");
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

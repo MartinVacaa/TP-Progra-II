@@ -25,6 +25,9 @@ builder.Services.AddScoped<IAlumnoRepository, AlumnoRepository>();
 builder.Services.AddScoped<IServiceAlumno, ServiceAlumno>();
 builder.Services.AddScoped<IDashBoardEncargado, EncargadoRepository>();
 builder.Services.AddScoped<IServiceEncargado, ServiceEncargado>();
+builder.Services.AddScoped<IServiceAlumno, ServiceAlumno>();
+builder.Services.AddScoped<INotaRepository, NotaRepository>();
+builder.Services.AddScoped<INotaService, NotaService>();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
 

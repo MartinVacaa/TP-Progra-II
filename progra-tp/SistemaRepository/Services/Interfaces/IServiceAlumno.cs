@@ -20,5 +20,7 @@ namespace SistemaRepository.Services.Interfaces
         Task<List<AlumnoNotaDTO>> AlumnoNotas();
 
         Task<bool> DeleteAlumno(string legajo);
+
+        Task<bool> UpdateAlumno(string legajo, Alumno alumno);
     }
 }

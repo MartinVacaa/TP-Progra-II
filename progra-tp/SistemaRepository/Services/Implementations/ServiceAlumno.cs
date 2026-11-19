@@ -47,5 +47,30 @@ namespace SistemaRepository.Services.Implementations
         {
             return await _repository.GetPromedioASync(legajo);
         }
+
+        public async Task<bool> UpdateAlumno(string legajo, Alumno alumno)
+        {
+            if (string.IsNullOrWhiteSpace(alumno.Nombre))
+            {
+                throw new ArgumentException("El nombre del alumno no puede estar vacío");
+            }
+
+            if (string.IsNullOrWhiteSpace(alumno.Apellido))
+            {
+                throw new ArgumentException("El apellido del alumno no puede estar vacío");
+            }
+
+            if (string.IsNullOrWhiteSpace(alumno.Dni))
+            {
+                throw new ArgumentException("El DNI del alumno no puede estar vacío");
+            }
+
+            if (string.IsNullOrWhiteSpace(alumno.Email))
+            {
+                throw new ArgumentException("El email del alumno no puede estar vacío");
+            }
+
+            return await _repository.UpdateAlumno(legajo, alumno);
+        }
     }
 }
