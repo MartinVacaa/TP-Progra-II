@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebApiSistema.DTO;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApiSistema.Controllers
 {
@@ -23,17 +24,32 @@ namespace WebApiSistema.Controllers
         }
 
         [HttpPost]
-         public IActionResult Login([FromBody]UserLoginDto user)
+        public IActionResult Login([FromBody] UserLoginDto user)
         {
-            var usuariolog = _context.Usuarios.FirstOrDefault(u => u.NombreUsuario == user.UserName && u.PasswordHash == user.Password);
+            var usuariolog = _context.Usuarios
+                .FirstOrDefault(u => u.NombreUsuario == user.UserName);
 
-            if (usuariolog == null)
+            if (usuariolog == null || !usuariolog.Activo)
             {
-                return Unauthorized("Usuario o contraseña incorrectas");
+                return Unauthorized("Usuario o contraseña incorrectos");
             }
-            var token = GenerateToken(usuariolog);
-            return Ok(new { Token = token });
 
+            var hasher = new PasswordHasher<Usuario>();
+
+            var resultado = hasher.VerifyHashedPassword(
+                usuariolog,
+                usuariolog.PasswordHash,
+                user.Password
+            );
+
+            if (resultado == PasswordVerificationResult.Failed)
+            {
+                return Unauthorized("Usuario o contraseña incorrectos");
+            }
+
+            var token = GenerateToken(usuariolog);
+
+            return Ok(new { Token = token });
         }
 
         private string GenerateToken(Usuario user)

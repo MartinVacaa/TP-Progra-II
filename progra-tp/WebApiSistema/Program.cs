@@ -7,6 +7,9 @@ using SistemaRepository.Data.Interfaces;
 using SistemaRepository.Services.Implementations;
 using SistemaRepository.Services.Interfaces;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
+using SistemaRepository.Domain;
+using Microsoft.OpenApi.Models;
 // Añade esto cerca de las líneas "builder.Services..."
 System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
@@ -18,7 +21,35 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer",
+        new OpenApiSecurityScheme
+        {
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            Scheme = "bearer",
+            BearerFormat = "JWT",
+            In = ParameterLocation.Header,
+            Description = "Ingresá tu token JWT"
+        });
+
+    options.AddSecurityRequirement(
+        new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                Array.Empty<string>()
+            }
+        });
+});
 
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddScoped<IAlumnoRepository, AlumnoRepository>();
@@ -58,6 +89,7 @@ builder.Services.AddCors(options =>
 
 
 var app = builder.Build();
+
 
 app.UseCors("AllowAll");
 
