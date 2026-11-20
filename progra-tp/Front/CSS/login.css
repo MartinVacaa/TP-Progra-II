@@ -1,11 +1,14 @@
 :root {
-    --fondo: #dfe8ec;
-    --tarjeta: #f8fafb;
-    --primario: #4a7c8c;
-    --primario-oscuro: #3a6472;
-    --texto: #2c3e46;
-    --texto-suave: #667a83;
-    --borde: #c9d6dc;
+    /* Paleta moderna tipo Dark/Slate UI */
+    --fondo: #0b0f19;                 /* Fondo general oscuro muy elegante */
+    --fondo-degraded: radial-gradient(circle at 50% 20%, #1e293b 0%, #0b0f19 100%);
+    --tarjeta: #f8f9fa;               /* Gris oscuro azulado para la tarjeta */
+    --primario: #0a5e81;            /* Cian brillante súper moderno para acentos */
+    --primario-hover: #0ea5e9;        /* Cian más oscuro al pasar el mouse */
+    --texto: #08192b;                 /* Blanco puro para títulos principales */
+    --texto-suave: #676869;           /* Gris claro para subtítulos y etiquetas */
+    --input-fondo: #feffff;           /* Fondo de los inputs un poquito más claro */
+    --borde: #043d55;                 /* Borde sutil */
 }
  
 * {
@@ -19,85 +22,103 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 20px;
     background-color: var(--fondo);
+    background-image: var(--fondo-degraded);
     color: var(--texto);
-    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
  
 .login-card {
     width: 100%;
-    max-width: 380px;
-    padding: 40px 32px;
+    max-width: 420px;
+    padding: 48px 40px;
     background-color: var(--tarjeta);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(44, 62, 70, 0.12);
+    border-radius: 20px;
+    /* Sombra profunda y difuminada con un toque de brillo sutil */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
  
 .login-header {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     text-align: center;
 }
  
 .login-header h1 {
-    margin-bottom: 6px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--primario-oscuro);
+    margin-bottom: 8px;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--texto);
+    letter-spacing: -0.5px;
 }
  
 .login-header p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--texto-suave);
 }
  
 .campo {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
  
 .campo label {
     display: block;
-    margin-bottom: 6px;
-    font-size: 0.875rem;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
     font-weight: 600;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
  
 .campo input {
     width: 100%;
-    padding: 11px 12px;
+    padding: 14px 16px;
     font-size: 1rem;
     color: var(--texto);
-    background-color: #ffffff;
-    border: 1px solid var(--borde);
-    border-radius: 8px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: var(--input-fondo);
+    border: 2px solid var(--borde); /* <-- Cambialo de 1px a 2px acá */
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+ 
+.campo input::placeholder {
+    color: #4b5563;
 }
  
 .campo input:focus {
     outline: none;
     border-color: var(--primario);
-    box-shadow: 0 0 0 3px rgba(74, 124, 140, 0.2);
+    background-color: #97b6f5;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
 }
  
 .btn-ingresar {
     width: 100%;
-    margin-top: 8px;
-    padding: 12px;
+    margin-top: 12px;
+    padding: 14px;
     font-size: 1rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #f7f8fa;                   /* Texto oscuro sobre el botón brillante */
     background-color: var(--primario);
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
 }
  
 .btn-ingresar:hover {
-    background-color: var(--primario-oscuro);
+    background-color: var(--primario-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.5);
+}
+ 
+.btn-ingresar:active {
+    transform: translateY(0);
 }
  
 .btn-ingresar:focus-visible {
-    outline: 3px solid rgba(74, 124, 140, 0.4);
+    outline: 3px solid rgba(56, 189, 248, 0.4);
     outline-offset: 2px;
 }
