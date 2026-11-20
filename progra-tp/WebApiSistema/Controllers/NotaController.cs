@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using SistemaRepository.Domain;
 using SistemaRepository.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApiSistema.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "ENCARGADO")]
     public class NotaController : ControllerBase
     {
         private readonly INotaService _service;

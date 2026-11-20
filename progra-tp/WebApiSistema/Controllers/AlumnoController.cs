@@ -10,6 +10,7 @@ namespace WebApiSistema.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "ENCARGADO")]
     public class AlumnoController : ControllerBase
     {
 
