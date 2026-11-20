@@ -1,4 +1,4 @@
-const API_LOGIN = "http://localhost:5000/api/Jwt"
+const API_LOGIN = "http://localhost:5074/api/Jwt"
 const CLAIM_ROL = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
 
 // Lee el payload del JWT (la parte del medio) sin librerías

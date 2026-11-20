@@ -35,6 +35,10 @@ namespace SistemaRepository.Services.Implementations
             {
                 throw new ArgumentException("El mail del alumno no puede ser nulo");
             }
+            if (!alumno.Inscripciones.Any())
+            {
+                throw new ArgumentException("El alumno debe estar inscripto a una carrera");
+            }
             return await _repository.CreateAlumno(alumno);
         }
 

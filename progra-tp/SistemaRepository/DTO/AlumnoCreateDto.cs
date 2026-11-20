@@ -12,5 +12,8 @@ namespace WebApiSistema.DTO
 
         [Required, MaxLength(50)] public string NombreUsuario { get; set; } = null!;
         [Required, MinLength(6)] public string Password { get; set; } = null!;
+
+        [Range(1, int.MaxValue, ErrorMessage = "Tenés que seleccionar una carrera")]
+        public int CarreraId { get; set; }
     }
 }

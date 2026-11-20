@@ -54,6 +54,14 @@ namespace SistemaRepository.Data.Implementations
             {
                 return false;
             }
+            foreach (var inscripcion in alumno.Inscripciones)
+            {
+                bool carreraExiste = await _context.Carreras.AnyAsync(c => c.Id == inscripcion.CarreraId);
+                if (!carreraExiste)
+                {
+                    throw new ArgumentException($"La carrera con Id {inscripcion.CarreraId} no existe");
+                }
+            }
 
             await _context.Alumnos.AddAsync(alumno);
 

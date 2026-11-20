@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SistemaRepository.Domain;
 using SistemaRepository.Services.Interfaces;
+using SistemaRepositroy.Domain;
 using System.Security.Claims;
 using WebApiSistema.DTO;
 
@@ -67,6 +68,16 @@ namespace WebApiSistema.Controllers
                 Dni = dto.Dni,
                 Usuario = usuario
             };
+
+
+            alumno.Inscripciones.Add(new Inscripcion
+            {
+                Legajo = dto.Legajo,
+                CarreraId = dto.CarreraId,
+                Fecha = DateTime.Today
+            });
+
+
             var resultado = new AlumnoDto
             {
 

@@ -1,7 +1,7 @@
 const registrados= document.getElementById("totalAlumnos");
 const porcentaje= document.getElementById("porcentajeDesaprobados");
 const contenedor= document.getElementById("tablaPromedios");
-const URL="http://localhost:5000/api/Encargado"   
+const URL="http://localhost:5074/api/Encargado"   
 
 function traertoken()
 {
@@ -59,7 +59,7 @@ function traerpromedios(promedios){
 traerestadisticas();
 
 //////////porcentaje//////
-const URLPORCENTAJE= "http://localhost:5000/api/Encargado/Desaprobados"
+const URLPORCENTAJE= "http://localhost:5074/api/Encargado/Desaprobados"
 
 async function desaporbadosporc(){
     const token=traertoken()
@@ -84,7 +84,7 @@ if(!response.ok){
 
 desaporbadosporc();
 ////cantidad alumnos/////
-const URLCANTIDAD= "http://localhost:5000/api/Encargado/Registrados"
+const URLCANTIDAD= "http://localhost:5074/api/Encargado/Registrados"
 
 async function traeralumnosregitrados() {
     const token= traertoken();

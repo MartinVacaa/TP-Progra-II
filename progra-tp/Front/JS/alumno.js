@@ -1,5 +1,5 @@
 // La protección de la página y cerrarSesion() están en JS/auth.js
-const URL = "http://localhost:5000/api/Alumno"
+const URL = "http://localhost:5074/api/Alumno"
 const contenedor = document.getElementById("lista-alumnos")
 const formAlumno = document.getElementById("formAlumno")
 const modalAlumno = document.getElementById("modalAlumno")
@@ -42,6 +42,19 @@ async function CargarAlumno() {
         alumnos = await response.json()
         ListadoAlumno()
     } catch (error) {
+        mostrarToast(error.message, "error")
+    }
+}
+async function CargarCarreras() {
+    const select = document.getElementById("carrera")
+    try {
+        const response = await fetch("http://localhost:5074/api/Carrera", { headers: headers() })
+        if (!response.ok) throw new Error(await leerError(response))
+        const carreras = await response.json()
+        select.innerHTML = `<option value="">Seleccioná una carrera</option>` +
+            carreras.map(c => `<option value="${c.id}">${c.nombre}</option>`).join("")
+    } catch (error) {
+        select.innerHTML = `<option value="">No se pudieron cargar las carreras</option>`
         mostrarToast(error.message, "error")
     }
 }
@@ -122,6 +135,7 @@ function prepararFormulario(editar) {
     campo("legajo").readOnly = editar
     campo("nombreUsuario").required = !editar
     campo("password").required = !editar
+    campo("carrera").required = !editar
 }
 
 function abrirModalRegistrar() {
@@ -174,6 +188,7 @@ formAlumno.addEventListener("submit", async (e) => {
             dto.legajo = campo("legajo").value.trim()
             dto.nombreUsuario = campo("nombreUsuario").value.trim()
             dto.password = campo("password").value
+            dto.carreraId = Number(campo("carrera").value)
             await crearAlumno(dto)
             mostrarToast("Alumno registrado correctamente")
         }
@@ -233,3 +248,4 @@ document.querySelectorAll(".modal-overlay").forEach(overlay =>
     }))
 
 CargarAlumno()
+CargarCarreras()

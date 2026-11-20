@@ -1,5 +1,5 @@
 // Portal del alumno: todas las consultas usan los endpoints protegidos de MiAlumno.
-const API = "http://localhost:5000/api/MiAlumno"
+const API = "http://localhost:5074/api/MiAlumno"
 
 // ---------------- 0. PROTECCIÓN DE LA PÁGINA ----------------
 const token = localStorage.getItem("authToken")

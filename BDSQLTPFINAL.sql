@@ -160,10 +160,36 @@ INSERT INTO Profesores (Dni, Nombre, Apellido, Email) VALUES
 ('31555666', N'Diego',   N'Molina',    'dmolina@instituto.edu');
 GO
 
--- CARRERAS (Id 1 y 2)
+-- PROFESORES NUEVOS (para las carreras agregadas)
+INSERT INTO Profesores (Dni, Nombre, Apellido, Email) VALUES
+('32111444', N'Martín',    N'Quiroga',  'mquiroga@instituto.edu'),
+('29444777', N'Verónica',  N'Luna',     'vluna@instituto.edu'),
+('33666999', N'Hernán',    N'Bustos',   'hbustos@instituto.edu'),
+('27888222', N'Gabriela',  N'Paz',      'gpaz@instituto.edu'),
+('24555111', N'Ricardo',   N'Ibáñez',   'ribanez@instituto.edu'),
+('34777333', N'Natalia',   N'Ruiz',     'nruiz@instituto.edu'),
+('26111999', N'Jorge',     N'Vega',     'jvega@instituto.edu'),
+('31222888', N'Carolina',  N'Sosa',     'csosa@instituto.edu'),
+('28333555', N'Federico',  N'Ponce',    'fponce@instituto.edu'),
+('30888444', N'Mariela',   N'Ortiz',    'mortiz@instituto.edu');
+GO
+
+-- CARRERAS (Id 1 y 2: las originales, usadas por las inscripciones de ejemplo)
 INSERT INTO Carreras (Nombre, DuracionAnios) VALUES
 (N'Tecnicatura en Programación', 2),
 (N'Licenciatura en Sistemas',    5);
+GO
+
+-- CARRERAS NUEVAS (Id 3 en adelante)
+INSERT INTO Carreras (Nombre, DuracionAnios) VALUES
+(N'Ingeniería en Sistemas de Información', 5),
+(N'Ingeniería Industrial',                 5),
+(N'Ingeniería Civil',                      6),
+(N'Ingeniería Electrónica',                5),
+(N'Ingeniería Mecánica',                   5),
+(N'Ingeniería Química',                    5),
+(N'Contador Público',                      5),
+(N'Licenciatura en Administración',        4);
 GO
 
 -- MATERIAS (profesor buscado por DNI)
@@ -186,6 +212,117 @@ FROM (VALUES
     (2, N'Paradigmas de Programación',        2, '23444555')   -- Acosta
 ) AS v(CarreraId, Materia, Anio, DniProfesor)
 LEFT JOIN Profesores p ON p.Dni = v.DniProfesor;
+GO
+
+-- MATERIAS DE LAS CARRERAS NUEVAS
+-- La carrera se busca por NOMBRE (no por Id) y el profesor por DNI
+INSERT INTO Materias (CarreraId, ProfesorId, Nombre, Anio)
+SELECT c.Id, p.Id, v.Materia, v.Anio
+FROM (VALUES
+    -- ===== INGENIERÍA EN SISTEMAS DE INFORMACIÓN =====
+    (N'Ingeniería en Sistemas de Información', N'Análisis Matemático I',                  1, '26777888'),  -- Herrera
+    (N'Ingeniería en Sistemas de Información', N'Álgebra y Geometría Analítica',          1, '32111444'),  -- Quiroga
+    (N'Ingeniería en Sistemas de Información', N'Algoritmos y Estructuras de Datos',      1, '28999111'),  -- Medina
+    (N'Ingeniería en Sistemas de Información', N'Matemática Discreta',                    1, '29444777'),  -- Luna
+    (N'Ingeniería en Sistemas de Información', N'Física I',                               1, '33666999'),  -- Bustos
+    (N'Ingeniería en Sistemas de Información', N'Sintaxis y Semántica de los Lenguajes',  2, '23444555'),  -- Acosta
+    (N'Ingeniería en Sistemas de Información', N'Paradigmas de Programación',             2, '25111222'),  -- Fernández
+    (N'Ingeniería en Sistemas de Información', N'Análisis de Sistemas de Información',    2, '27333444'),  -- Martínez
+    (N'Ingeniería en Sistemas de Información', N'Bases de Datos',                         3, '28999111'),  -- Medina
+    (N'Ingeniería en Sistemas de Información', N'Sistemas Operativos',                    3, '31555666'),  -- Molina
+    (N'Ingeniería en Sistemas de Información', N'Redes de Datos',                         4, '34777333'),  -- Ruiz
+    (N'Ingeniería en Sistemas de Información', N'Ingeniería de Software',                 4, '27333444'),  -- Martínez
+    (N'Ingeniería en Sistemas de Información', N'Inteligencia Artificial',                5, '30888444'),  -- Ortiz
+
+    -- ===== INGENIERÍA INDUSTRIAL =====
+    (N'Ingeniería Industrial', N'Análisis Matemático I',                 1, '26777888'),  -- Herrera
+    (N'Ingeniería Industrial', N'Álgebra y Geometría Analítica',         1, '32111444'),  -- Quiroga
+    (N'Ingeniería Industrial', N'Química General',                       1, '27888222'),  -- Paz
+    (N'Ingeniería Industrial', N'Sistemas de Representación',            1, '26111999'),  -- Vega
+    (N'Ingeniería Industrial', N'Física I',                              1, '33666999'),  -- Bustos
+    (N'Ingeniería Industrial', N'Probabilidad y Estadística',            2, '29444777'),  -- Luna
+    (N'Ingeniería Industrial', N'Economía General',                      2, '31222888'),  -- Sosa
+    (N'Ingeniería Industrial', N'Investigación Operativa',               3, '32111444'),  -- Quiroga
+    (N'Ingeniería Industrial', N'Organización Industrial',               3, '28333555'),  -- Ponce
+    (N'Ingeniería Industrial', N'Higiene y Seguridad en el Trabajo',     4, '24555111'),  -- Ibáñez
+    (N'Ingeniería Industrial', N'Control de Calidad',                    4, '28333555'),  -- Ponce
+    (N'Ingeniería Industrial', N'Planificación y Control de la Producción', 5, '28333555'),  -- Ponce
+
+    -- ===== INGENIERÍA CIVIL =====
+    (N'Ingeniería Civil', N'Análisis Matemático I',              1, '26777888'),  -- Herrera
+    (N'Ingeniería Civil', N'Álgebra y Geometría Analítica',      1, '32111444'),  -- Quiroga
+    (N'Ingeniería Civil', N'Sistemas de Representación',         1, '26111999'),  -- Vega
+    (N'Ingeniería Civil', N'Física I',                           1, '33666999'),  -- Bustos
+    (N'Ingeniería Civil', N'Estabilidad I',                      2, '24555111'),  -- Ibáñez
+    (N'Ingeniería Civil', N'Tecnología de los Materiales',       2, '27888222'),  -- Paz
+    (N'Ingeniería Civil', N'Topografía',                         3, '26111999'),  -- Vega
+    (N'Ingeniería Civil', N'Hidráulica General',                 3, '33666999'),  -- Bustos
+    (N'Ingeniería Civil', N'Geotecnia',                          4, '24555111'),  -- Ibáñez
+    (N'Ingeniería Civil', N'Hormigón Armado',                    5, '24555111'),  -- Ibáñez
+    (N'Ingeniería Civil', N'Vías de Comunicación',               5, '26111999'),  -- Vega
+    (N'Ingeniería Civil', N'Construcción de Edificios',          6, '28333555'),  -- Ponce
+
+    -- ===== INGENIERÍA ELECTRÓNICA =====
+    (N'Ingeniería Electrónica', N'Análisis Matemático I',            1, '26777888'),  -- Herrera
+    (N'Ingeniería Electrónica', N'Álgebra y Geometría Analítica',    1, '32111444'),  -- Quiroga
+    (N'Ingeniería Electrónica', N'Física I',                         1, '33666999'),  -- Bustos
+    (N'Ingeniería Electrónica', N'Informática I',                    1, '23444555'),  -- Acosta
+    (N'Ingeniería Electrónica', N'Física II',                        2, '33666999'),  -- Bustos
+    (N'Ingeniería Electrónica', N'Teoría de Circuitos I',            2, '34777333'),  -- Ruiz
+    (N'Ingeniería Electrónica', N'Dispositivos Electrónicos',        3, '34777333'),  -- Ruiz
+    (N'Ingeniería Electrónica', N'Técnicas Digitales I',             3, '31555666'),  -- Molina
+    (N'Ingeniería Electrónica', N'Electrónica Aplicada I',           4, '34777333'),  -- Ruiz
+    (N'Ingeniería Electrónica', N'Sistemas de Control',              4, '30888444'),  -- Ortiz
+    (N'Ingeniería Electrónica', N'Comunicaciones',                   5, '30888444'),  -- Ortiz
+
+    -- ===== INGENIERÍA MECÁNICA =====
+    (N'Ingeniería Mecánica', N'Análisis Matemático I',             1, '26777888'),  -- Herrera
+    (N'Ingeniería Mecánica', N'Álgebra y Geometría Analítica',     1, '32111444'),  -- Quiroga
+    (N'Ingeniería Mecánica', N'Sistemas de Representación',        1, '26111999'),  -- Vega
+    (N'Ingeniería Mecánica', N'Física I',                          1, '33666999'),  -- Bustos
+    (N'Ingeniería Mecánica', N'Estabilidad I',                     2, '24555111'),  -- Ibáñez
+    (N'Ingeniería Mecánica', N'Termodinámica',                     3, '27888222'),  -- Paz
+    (N'Ingeniería Mecánica', N'Mecánica de los Fluidos',           3, '33666999'),  -- Bustos
+    (N'Ingeniería Mecánica', N'Elementos de Máquinas',             4, '28333555'),  -- Ponce
+    (N'Ingeniería Mecánica', N'Tecnología de Fabricación',         4, '28333555'),  -- Ponce
+    (N'Ingeniería Mecánica', N'Máquinas Térmicas',                 5, '27888222'),  -- Paz
+
+    -- ===== INGENIERÍA QUÍMICA =====
+    (N'Ingeniería Química', N'Análisis Matemático I',              1, '26777888'),  -- Herrera
+    (N'Ingeniería Química', N'Química General',                    1, '27888222'),  -- Paz
+    (N'Ingeniería Química', N'Física I',                           1, '33666999'),  -- Bustos
+    (N'Ingeniería Química', N'Química Inorgánica',                 2, '27888222'),  -- Paz
+    (N'Ingeniería Química', N'Química Orgánica',                   2, '30888444'),  -- Ortiz
+    (N'Ingeniería Química', N'Fisicoquímica',                      3, '30888444'),  -- Ortiz
+    (N'Ingeniería Química', N'Fenómenos de Transporte',            3, '33666999'),  -- Bustos
+    (N'Ingeniería Química', N'Operaciones Unitarias I',            4, '27888222'),  -- Paz
+    (N'Ingeniería Química', N'Ingeniería de las Reacciones Químicas', 5, '30888444'),  -- Ortiz
+
+    -- ===== CONTADOR PÚBLICO =====
+    (N'Contador Público', N'Contabilidad I',                       1, '31222888'),  -- Sosa
+    (N'Contador Público', N'Introducción a la Economía',           1, '31222888'),  -- Sosa
+    (N'Contador Público', N'Matemática I',                         1, '29444777'),  -- Luna
+    (N'Contador Público', N'Introducción al Derecho',              1, '27333444'),  -- Martínez
+    (N'Contador Público', N'Contabilidad II',                      2, '31222888'),  -- Sosa
+    (N'Contador Público', N'Estadística',                          2, '29444777'),  -- Luna
+    (N'Contador Público', N'Derecho Comercial',                    3, '27333444'),  -- Martínez
+    (N'Contador Público', N'Costos',                               3, '28333555'),  -- Ponce
+    (N'Contador Público', N'Impuestos I',                          4, '31222888'),  -- Sosa
+    (N'Contador Público', N'Auditoría',                            5, '31222888'),  -- Sosa
+
+    -- ===== LICENCIATURA EN ADMINISTRACIÓN =====
+    (N'Licenciatura en Administración', N'Administración General',        1, '28333555'),  -- Ponce
+    (N'Licenciatura en Administración', N'Contabilidad Básica',           1, '31222888'),  -- Sosa
+    (N'Licenciatura en Administración', N'Matemática I',                  1, '29444777'),  -- Luna
+    (N'Licenciatura en Administración', N'Microeconomía',                 2, '31222888'),  -- Sosa
+    (N'Licenciatura en Administración', N'Comportamiento Organizacional', 2, '27333444'),  -- Martínez
+    (N'Licenciatura en Administración', N'Marketing',                     3, '30222333'),  -- Castro
+    (N'Licenciatura en Administración', N'Recursos Humanos',              3, '27333444'),  -- Martínez
+    (N'Licenciatura en Administración', N'Administración Financiera',     4, '31222888'),  -- Sosa
+    (N'Licenciatura en Administración', N'Dirección Estratégica',         4, '28333555')   -- Ponce
+) AS v(Carrera, Materia, Anio, DniProfesor)
+JOIN Carreras        c ON c.Nombre = v.Carrera
+LEFT JOIN Profesores p ON p.Dni    = v.DniProfesor;
 GO
 
 -- INSCRIPCIONES (1 = Tecnicatura, 2 = Licenciatura)
@@ -294,6 +431,13 @@ UNION ALL SELECT 'Carreras',      COUNT(*) FROM Carreras
 UNION ALL SELECT 'Materias',      COUNT(*) FROM Materias
 UNION ALL SELECT 'Inscripciones', COUNT(*) FROM Inscripciones
 UNION ALL SELECT 'Notas',         COUNT(*) FROM Notas;
+
+-- Materias por carrera (sirve para chequear que entraron todas)
+SELECT c.Id, c.Nombre AS Carrera, c.DuracionAnios, COUNT(m.Id) AS Materias
+FROM Carreras c
+LEFT JOIN Materias m ON m.CarreraId = c.Id
+GROUP BY c.Id, c.Nombre, c.DuracionAnios
+ORDER BY c.Id;
 
 -- Notas de cada alumno
 SELECT a.Legajo, a.Apellido + ', ' + a.Nombre AS Alumno,
