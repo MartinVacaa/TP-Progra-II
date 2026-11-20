@@ -22,5 +22,8 @@ namespace SistemaRepository.Services.Interfaces
         Task<bool> DeleteAlumno(string legajo);
 
         Task<bool> UpdateAlumno(string legajo, Alumno alumno);
+        Task<int> ContarMateriasCursando(string legajo);
+
+        Task<AlumnoPerfilDto?> GetPerfilPorUsuario(string nombreUsuario);
     }
 }

@@ -20,5 +20,7 @@ namespace SistemaRepository.Data.Interfaces
         Task<bool> UpdateAlumno(string legajo, Alumno alumno);
 
         Task<List<AlumnoNotaDTO>> AlumnosNotas();
+        Task<int> ContarMateriasCursando(string legajo);
+        Task<AlumnoPerfilDto?> GetPerfilPorUsuario(string nombreUsuario);
     }
 }
