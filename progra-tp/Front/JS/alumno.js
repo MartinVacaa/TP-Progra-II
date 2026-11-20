@@ -1,3 +1,4 @@
+// La protección de la página y cerrarSesion() están en JS/auth.js
 const URL = "https://localhost:7024/api/Alumno"
 const contenedor = document.getElementById("lista-alumnos")
 const formAlumno = document.getElementById("formAlumno")
@@ -230,14 +231,5 @@ document.querySelectorAll(".modal-overlay").forEach(overlay =>
     overlay.addEventListener("click", (e) => {
         if (e.target === overlay) overlay.classList.remove("activo")
     }))
-
-function cerrarSesion() {
-    localStorage.removeItem("authToken")
-    window.location.href = "login.html"
-}
-
-function navegarA() {
-    window.location.href = "index.html"
-}
 
 CargarAlumno()

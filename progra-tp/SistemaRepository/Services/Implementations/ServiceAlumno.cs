@@ -24,6 +24,11 @@ namespace SistemaRepository.Services.Implementations
            return _repository.AlumnosNotas();
         }
 
+        public async Task<int> ContarMateriasCursando(string legajo)
+        {
+            return await _repository.ContarMateriasCursando(legajo);
+        }
+
         public async Task<bool> CreateAlumno(Alumno alumno)
         {
             if (alumno.Email == null)
@@ -41,6 +46,15 @@ namespace SistemaRepository.Services.Implementations
         public async Task<List<Alumno>> GetAllASync()
         {
             return await _repository.GetAllAsync();
+        }
+
+        public async Task<AlumnoPerfilDto?> GetPerfilPorUsuario(string nombreUsuario)
+        {
+            if (string.IsNullOrWhiteSpace(nombreUsuario))
+            {
+                return null;
+            }
+            return await _repository.GetPerfilPorUsuario(nombreUsuario);
         }
 
         public async Task<decimal> GetPromedio(string legajo)

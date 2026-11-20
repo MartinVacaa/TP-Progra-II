@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SistemaRepository.Domain;
 using SistemaRepository.Services.Interfaces;
-using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 using WebApiSistema.DTO;
-using Microsoft.AspNetCore.Authorization;
 
 namespace WebApiSistema.Controllers
 {
@@ -139,7 +140,33 @@ namespace WebApiSistema.Controllers
                 {
                     return BadRequest(ex.Message);
                 }
-            }
         }
+
+        [HttpGet("{legajo}/materias")]
+        public async Task<IActionResult> GetMateriasCursando(string legajo)
+        {
+            var cantidad = await _service.ContarMateriasCursando(legajo);
+            return Ok(cantidad);
+        }
+
+        [HttpGet("perfil")]
+        [Authorize(Roles = "ALUMNO")]
+        public async Task<IActionResult> GetPerfil()
+        {
+            var nombreUsuario = User.FindFirst("sub")?.Value
+                                ?? User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            var perfil = await _service.GetPerfilPorUsuario(nombreUsuario ?? "");
+            if (perfil == null)
+            {
+                return NotFound("No se encontró un alumno asociado a este usuario");
+            }
+            return Ok(perfil);
+        }
+
+
+
+
     }
+}
 

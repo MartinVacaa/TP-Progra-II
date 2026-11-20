@@ -96,12 +96,16 @@ namespace SistemaRepository.Data.Implementations
 
         public async Task<decimal> GetPromedioASync(string legajo)
         {
-            var alumno = await  GetAlumnoBYId(legajo);
-            if(alumno== null)
+            var alumno = await GetAlumnoBYId(legajo);
+            if (alumno == null)
             {
                 return 0m;
             }
             int cantnotas = alumno.Notas.Count();
+            if (cantnotas == 0)
+            {
+                return 0m; 
+            }
             var promedio = (alumno.Notas.Sum(n => n.Valor) / cantnotas);
 
 
@@ -125,5 +129,36 @@ namespace SistemaRepository.Data.Implementations
             await _context.SaveChangesAsync();
             return true;
         }
+        public async Task<int> ContarMateriasCursando(string legajo)
+        {
+            return await _context.Materias
+                .CountAsync(m => _context.Inscripciones
+                    .Any(i => i.Legajo == legajo && i.CarreraId == m.CarreraId));
+        }
+
+        // Busca al alumno a partir del nombre de usuario que viene en el token (claim "sub")
+        public async Task<AlumnoPerfilDto?> GetPerfilPorUsuario(string nombreUsuario)
+        {
+            var alumno = await _context.Alumnos
+                .Include(a => a.Inscripciones).ThenInclude(i => i.Carrera)
+                .FirstOrDefaultAsync(a => a.Usuario!.NombreUsuario == nombreUsuario);
+
+            if (alumno == null)
+            {
+                return null;
+            }
+
+            return new AlumnoPerfilDto
+            {
+                Legajo = alumno.Legajo,
+                Nombre = alumno.Nombre,
+                Apellido = alumno.Apellido,
+                Email = alumno.Email,
+                Carrera = alumno.Inscripciones.Select(i => i.Carrera!.Nombre).FirstOrDefault(),
+                MateriasCursando = await ContarMateriasCursando(alumno.Legajo)
+            };
+        }
     }
 }
+    
+

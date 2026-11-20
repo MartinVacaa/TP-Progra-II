@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal del Alumno | Sistema Académico</title>
+    <link rel="stylesheet" href="CSS/portal-alumno.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- BARRA LATERAL (MENÚ) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Sistema Académico</h2>
+                <span class="rol-badge">Portal Alumno</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-btn activo" data-seccion="inicio">📊 Resumen General</button>
+                <button class="nav-btn" data-seccion="materias">📚 Mis Materias</button>
+                <button class="nav-btn" data-seccion="notas">📝 Mis Notas</button>
+                <button class="nav-btn" data-seccion="finales">📅 Fechas de Finales</button>
+                <button class="nav-btn" data-seccion="contacto">✉️ Contacto y Profesores</button>
+                <button class="nav-btn" data-seccion="tramites">📄 Trámites</button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="login.html" id="btn-abrir-logout" class="btn-salir">Cerrar Sesión</a>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL DE CONTENIDO -->
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <h1 id="titulo-seccion">Resumen General</h1>
+                    <p class="subtitulo">Bienvenido de nuevo, <strong id="nombre-alumno">...</strong> (Legajo #<span id="legajo-alumno">...</span>)</p>
+                </div>
+            </header>
+
+            <!-- SECCIÓN 1: INICIO / RESUMEN -->
+            <section id="sec-inicio" class="seccion-vista activa">
+                <div class="cards-resumen">
+                    <div class="stat-card">
+                        <span class="stat-label">Materias Cursando</span>
+                        <strong class="stat-valor" id="stat-materias">-</strong>
+                        <span class="stat-extra" id="stat-carrera"></span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Promedio General</span>
+                        <strong class="stat-valor" id="stat-promedio">-</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Próximo Final</span>
+                        <strong class="stat-valor" id="stat-proximo-final">-</strong>
+                        <span class="stat-extra" id="stat-proximo-final-materia"></span>
+                    </div>
+                </div>
+
+                <div class="card-tabla">
+                    <h3>Actividad Reciente y Avisos</h3>
+                    <p class="texto-vacio" id="texto-avisos">No tenés notificaciones pendientes. Recordá verificar las fechas de inscripción a mesas de diciembre.</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: MIS MATERIAS -->
+            <section id="sec-materias" class="seccion-vista">
+                <div class="card-tabla">
+                    <h3>Materias con calificaciones (Ciclo Lectivo 2026)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Carrera</th>
+                                <th>Evaluaciones</th>
+                                <th>Promedio</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-materias">
+                            <tr><td colspan="5" class="texto-vacio">Cargando...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: MIS NOTAS -->
+            <section id="sec-notas" class="seccion-vista">
+                <div class="card-tabla">
+                    <h3>Seleccioná una materia para ver tus calificaciones</h3>
+
+                    <div class="selector-materias" id="selector-materias-notas"></div>
+
+                    <div class="detalle-notas-box">
+                        <h4 id="titulo-materia-nota"></h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Instancia Evaluativa</th>
+                                    <th>Fecha</th>
+                                    <th>Calificación</th>
+                                    <th>Condición</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-detalle-notas">
+                                <tr><td colspan="4" class="texto-vacio">Cargando...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: FECHAS DE FINALES (solo visual, sin back) -->
+            <section id="sec-finales" class="seccion-vista">
+                <div class="card-tabla">
+                    <h3>Mesas de Examen Final Disponibles</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Fecha y Hora</th>
+                                <th>Aula</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-finales">
+                            <tr>
+                                <td><strong>Bases de Datos</strong></td>
+                                <td>24/11/2026 - 18:00 hs</td>
+                                <td>Lab. Informática 2</td>
+                                <td><span class="estado disponible" id="estado-final-bdd">Disponible</span></td>
+                                <td><button class="btn-accion inscribir" onclick="toggleInscripcion('final-bdd', this)">Inscribirse</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Programación Web I</strong></td>
+                                <td>03/12/2026 - 19:00 hs</td>
+                                <td>Aula 14</td>
+                                <td><span class="estado disponible" id="estado-final-prg">Disponible</span></td>
+                                <td><button class="btn-accion inscribir" onclick="toggleInscripcion('final-prg', this)">Inscribirse</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inglés Técnico I</strong></td>
+                                <td>10/12/2026 - 17:30 hs</td>
+                                <td>Aula 08</td>
+                                <td><span class="estado promocionada" id="estado-final-ing">Inscripto</span></td>
+                                <td><button class="btn-accion anular" onclick="toggleInscripcion('final-ing', this)">Anular inscripción</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 5: CONTACTO Y PROFESORES (solo visual) -->
+            <section id="sec-contacto" class="seccion-vista">
+                <div class="card-tabla">
+                    <h3>Directorio de Contacto Institucional</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Área / Materia</th>
+                                <th>Responsable</th>
+                                <th>Correo Electrónico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Secretaría Académica</strong></td>
+                                <td>Atención a Alumnos</td>
+                                <td><a href="mailto:academica@universidad.edu" class="link-mail">academica@universidad.edu</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mesa de Entradas / Soporte</strong></td>
+                                <td>Bedelía</td>
+                                <td><a href="mailto:bedelia@universidad.edu" class="link-mail">bedelia@universidad.edu</a></td>
+                            </tr>
+                            <tr>
+                                <td>Programación Web I</td>
+                                <td>Ing. Carlos Gómez</td>
+                                <td><a href="mailto:carlos.gomez@universidad.edu" class="link-mail">carlos.gomez@universidad.edu</a></td>
+                            </tr>
+                            <tr>
+                                <td>Bases de Datos</td>
+                                <td>Lic. Laura Martínez</td>
+                                <td><a href="mailto:laura.martinez@universidad.edu" class="link-mail">laura.martinez@universidad.edu</a></td>
+                            </tr>
+                            <tr>
+                                <td>Matemática Discreta</td>
+                                <td>Prof. Andrés Silva</td>
+                                <td><a href="mailto:andres.silva@universidad.edu" class="link-mail">andres.silva@universidad.edu</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 6: TRÁMITES (solo visual) -->
+            <section id="sec-tramites" class="seccion-vista">
+                <div class="card-tabla">
+                    <h3>Solicitud de Certificados y Trámites</h3>
+                    <p class="subtitulo" style="margin-bottom: 20px;">Generá constancias digitales de forma instantánea para presentar en tu trabajo o institución.</p>
+                    <div class="tramites-botones">
+                        <button class="btn-accion btn-tramite inscribir" onclick="solicitarTramite(this, 'Certificado de Alumno Regular')">Solicitar Certificado de Alumno Regular</button>
+                        <button class="btn-accion btn-tramite inscribir" onclick="solicitarTramite(this, 'Analítico Parcial')">Solicitar Analítico Parcial</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL DE CIERRE DE SESIÓN -->
+    <div id="modal-logout" class="modal-overlay">
+        <div class="modal-card">
+            <h3>¿Estás seguro que deseás cerrar sesión?</h3>
+            <p>Se perderá cualquier cambio no guardado y volverás a la pantalla de inicio de sesión.</p>
+            <div class="modal-botones">
+                <button id="btn-cancelar-logout" class="modal-btn cancelar">No, volver</button>
+                <button id="btn-confirmar-logout" class="modal-btn confirmar">Sí, cerrar sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AVISOS -->
+    <div id="toast" class="toast"></div>
+
+    <script src="JS/portal-alumno.js"></script>
+</body>
+</html>
