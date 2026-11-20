@@ -1,7 +1,7 @@
 const registrados= document.getElementById("totalAlumnos");
 const porcentaje= document.getElementById("porcentajeDesaprobados");
 const contenedor= document.getElementById("tablaPromedios");
-const URL="https://localhost:7024/api/Encargado"   
+const URL="http://localhost:5000/api/Encargado"   
 
 function traertoken()
 {
@@ -48,7 +48,7 @@ function traerpromedios(promedios){
             <td>${element.legajo}</td>
             <td>${element.nombre}</td>
             <td>${element.apellido}</td>
-            <td>${element.promedio}</td>  
+            <td>${Number(element.promedio).toFixed(2)}</td> 
         </tr>
         
         
@@ -59,7 +59,7 @@ function traerpromedios(promedios){
 traerestadisticas();
 
 //////////porcentaje//////
-const URLPORCENTAJE= "https://localhost:7024/api/Encargado/Desaprobados"
+const URLPORCENTAJE= "http://localhost:5000/api/Encargado/Desaprobados"
 
 async function desaporbadosporc(){
     const token=traertoken()
@@ -79,12 +79,12 @@ if(!response.ok){
     throw new Error("No se ha podido cargar la lista de alumnos"); 
     }
     const alumnosdesaprobados= await response.json()
-    porcentaje.innerHTML=`%${alumnosdesaprobados.porcentaje}`
+    porcentaje.innerHTML = `${Number(alumnosdesaprobados.porcentaje).toFixed(2)}%`
 }
 
 desaporbadosporc();
 ////cantidad alumnos/////
-const URLCANTIDAD= "https://localhost:7024/api/Encargado/Registrados"
+const URLCANTIDAD= "http://localhost:5000/api/Encargado/Registrados"
 
 async function traeralumnosregitrados() {
     const token= traertoken();

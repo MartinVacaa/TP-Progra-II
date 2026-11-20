@@ -30,6 +30,7 @@ namespace SistemaRepository.Domain
         public string Rol { get; set; } = "ALUMNO";
 
         public bool Activo { get; set; } = true;
+        public bool DebeCambiarPassword { get; set; } = false;
 
         // Navegación: si el usuario es alumno, sus datos
         [JsonIgnore]

@@ -1,4 +1,4 @@
-const API_LOGIN = "http://localhost:5074/api/Jwt"
+const API_LOGIN = "http://localhost:5000/api/Jwt"
 const CLAIM_ROL = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
 
 // Lee el payload del JWT (la parte del medio) sin librerías
@@ -28,7 +28,15 @@ document.getElementById("form-login").addEventListener("submit", async (e) => {
         }
 
         const datos = await response.json()
-        const payload = leerToken(datos.token)
+
+    if (datos.requiereCambioPassword === true) {
+        sessionStorage.setItem("usuarioCambioPassword", usuario)
+        window.location.href = "cambiar-password.html"
+        return
+    }
+
+    const payload = leerToken(datos.token)
+
         const rol = payload[CLAIM_ROL] || payload.role
 
         localStorage.setItem("authToken", datos.token)

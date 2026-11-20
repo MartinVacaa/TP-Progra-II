@@ -1,5 +1,5 @@
 // La protección de la página y cerrarSesion() están en JS/auth.js
-const URL = "https://localhost:7024/api/Alumno"
+const URL = "http://localhost:5000/api/Alumno"
 const contenedor = document.getElementById("lista-alumnos")
 const formAlumno = document.getElementById("formAlumno")
 const modalAlumno = document.getElementById("modalAlumno")

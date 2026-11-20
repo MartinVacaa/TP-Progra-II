@@ -35,6 +35,13 @@ CREATE TABLE Usuarios (
 );
 GO
 
+IF COL_LENGTH('dbo.Usuarios', 'DebeCambiarPassword') IS NULL
+BEGIN
+    ALTER TABLE dbo.Usuarios
+    ADD DebeCambiarPassword BIT NOT NULL
+    CONSTRAINT DF_Usuarios_DebeCambiarPassword DEFAULT (0);
+END;
+
 -- Solo puede existir UN encargado
 CREATE UNIQUE INDEX UX_Usuarios_UnSoloEncargado
     ON Usuarios(Rol)
@@ -264,6 +271,19 @@ JOIN Inscripciones i ON i.Legajo = v.Legajo
 JOIN Materias      m ON m.Nombre = v.Materia AND m.CarreraId = i.CarreraId;
 GO
 
+
+
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEIISRWSpUzh4tZ3iFBqEZBiz90wMyMenYN5jHsYc5dfeoFkQcqYmKgUxfOYGDYk0Cw==', Activo = 1, DebeCambiarPassword = 0 WHERE Usuario = N'encargado';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEDjZ0mlDbQxVg4gw8iF90T5d0clDzcrZOJVfrxwwkhwBnk2537pnJpwCAyiuAvpw+w==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'jperez';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEJ3FMDSId8u53GypMPhuBIUTUv0UksKEBEQlA6KkAB4jPG2zCFsl/7mCyqHJzMxh+Q==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'mgomez';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEHcVsdqV093vylqG8fxqOEBYyUEpPMQ14uhr6raBq972T+Y9QHjpY2NUGymL6S8ZDw==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'lrodriguez';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEJx8ItrettBZxf13j3VMnUxaIPkU4yC5rV9UoJPKgUavLGlcGJvxpjdxNEYvgdN8iA==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'sfernandez';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEL2KqtzLurCZ3FedeEeA21fzIMUCTM02bp2QVQlQ0LrxlLD/kqGjG4Ww94dd5Okviw==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'mlopez';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEGc01yEhA5O3o9khqmSwmWtZmYrJRbSMr0nmb750+fjSWZ5wfAZ7MD00uCdbSrP6HA==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'agarcia';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEDxdDOW6pvDeDj8VqyUBaRKfxGnMKvxyLhKqFp2KNRW7kUNIAZxdqkqvgvfPLvqiLg==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'csanchez';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEPRO9TcDf6glzNz9MYw/jC6eDSn0OH8ETTJUMxGgHX8fZyo/rVIf2TR4CjBmanirKg==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'vromero';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEN+0LulX868RvEGDnToWMJiXN1Hl1Wd2AkB5aGsjPcqVIGyds/3wCUX909387WpkOQ==', Activo = 1, DebeCambiarPassword = 1 WHERE Usuario = N'ndiaz';
+UPDATE Usuarios SET PasswordHash = N'AQAAAAIAAYagAAAAEEMrrdxsjjGx2tuKcyM8OwRXln9Uk3SNX5yvVGzxPbaYsI7gbUJEkWn+bYBhkiyx4Q==', Activo = 1, DebeCambiarPassword = 0 WHERE Usuario = N'ftorres';
 -- =====================================================================
 -- VERIFICACIÓN
 -- =====================================================================

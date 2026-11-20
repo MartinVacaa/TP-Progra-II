@@ -28,23 +28,42 @@ namespace WebApiSistema.Controllers
             var usuariolog = _context.Usuarios
                 .FirstOrDefault(u => u.NombreUsuario == user.UserName);
 
+
             if (usuariolog == null || !usuariolog.Activo)
             {
                 return Unauthorized("Usuario o contraseña incorrectos");
             }
 
             var hasher = new PasswordHasher<Usuario>();
-
-            var resultado = hasher.VerifyHashedPassword(
-                usuariolog,
-                usuariolog.PasswordHash,
-                user.Password
-            );
+            PasswordVerificationResult resultado;
+            try
+            {
+                resultado = hasher.VerifyHashedPassword(
+                    usuariolog,
+                    usuariolog.PasswordHash,
+                    user.Password
+                );
+            }
+            catch (FormatException)
+            {
+                return Unauthorized("Usuario o contraseña incorrectos");
+            }
 
             if (resultado == PasswordVerificationResult.Failed)
             {
                 return Unauthorized("Usuario o contraseña incorrectos");
             }
+
+            // No emitir un JWT normal hasta que la persona cambie su contraseña.
+            if (usuariolog.DebeCambiarPassword)
+            {
+                return Ok(new
+                {
+                    requiereCambioPassword = true,
+                    usuario = usuariolog.NombreUsuario
+                });
+            }
+
 
             var token = GenerateToken(usuariolog);
 

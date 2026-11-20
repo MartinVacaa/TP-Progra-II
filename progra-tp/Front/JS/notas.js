@@ -1,7 +1,7 @@
 // ==========================================
 // 1. VARIABLES GENERALES
 // ==========================================
-const API = "https://localhost:44387/api";
+const API = "http://localhost:5000/api";
 
 const tablaNotas = document.getElementById("tablaNotas");
 const buscador = document.getElementById("buscador");
