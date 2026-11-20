@@ -20,7 +20,7 @@
                 <button class="nav-btn" onclick="window.location.href='notas.html'">
                     📝 Notas
                 </button>
-                <button class="nav-btn active" onclick="window.location.href='estadisticas.html'">
+                <button class="nav-btn" onclick="window.location.href='estadisticas.html'">
                     📊 Estadísticas
                 </button>
                 <button class="nav-btn btn-logout" onclick="cerrarSesion()">
@@ -29,74 +29,107 @@
             </nav>
         </aside>
 
-        <!-- CONTENIDO PRINCIPAL (Varía según el botón tocado) -->
+        <!-- CONTENIDO PRINCIPAL -->
         <main class="main-content">
             <header class="top-header">
                 <h1 id="tituloSeccion">Listado de Alumnos</h1>
             </header>
-            
-            <!-- Aquí se inyecta la tabla o datos de la sección elegida -->
+
+            <!-- BARRA DE ACCIONES -->
+            <div class="acciones-bar">
+                <button type="button" class="btn-accion btn-accion-registrar" onclick="abrirModalRegistrar()">
+                    <span class="btn-icono">＋</span> Registrar alumno
+                </button>
+                <button type="button" id="btnEditar" class="btn-accion btn-accion-editar" onclick="abrirModalEditar()" disabled>
+                    <span class="btn-icono">✎</span> Editar
+                </button>
+                <button type="button" id="btnEliminar" class="btn-accion btn-accion-eliminar" onclick="abrirModalEliminar()" disabled>
+                    <span class="btn-icono">🗑</span> Eliminar
+                </button>
+                <span id="seleccionInfo" class="seleccion-info">Seleccioná un alumno de la tabla para editar o eliminar</span>
+            </div>
+
             <section id="vistaDinamica">
                 <table class="table-custom">
                     <thead>
-            <tr>
-                <th>Legajo</th>
-                <th>Nombre</th>                        
-                <th>Apellido</th>
-                <th>Dni</th>
-                <th>Email</th>
-                
-            </tr>
-        </thead>
-        <tbody id="lista-alumnos">
-
-        </tbody>
-
+                        <tr>
+                            <th>Legajo</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Dni</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-alumnos">
+                        <!-- Se llena mediante JavaScript -->
+                    </tbody>
                 </table>
-            
-                <!-- Se llena mediante JavaScript -->
             </section>
         </main>
     </div>
+
+    <!-- MODAL: REGISTRAR / EDITAR ALUMNO -->
     <div id="modalAlumno" class="modal-overlay">
         <div class="modal-card">
-            <h2 id="tituloModalAlumno">Nuevo Alumno</h2>
+            <div class="modal-header">
+                <h2 id="tituloModalAlumno">Registrar Alumno</h2>
+                <button type="button" class="modal-close" onclick="cerrarModalAlumno()" aria-label="Cerrar">✕</button>
+            </div>
             <form id="formAlumno">
-                <input type="hidden" id="alumnoLegajo">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" required>
+                <div class="form-grid">
+                    <div class="form-group form-group-full">
+                        <label for="legajo">Legajo</label>
+                        <input type="text" id="legajo" maxlength="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dni">DNI</label>
+                        <input type="text" id="dni" maxlength="10" inputmode="numeric" pattern="[0-9]{7,10}" title="Solo números, sin puntos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" maxlength="120" required>
+                    </div>
+                    <div class="form-group campo-cuenta">
+                        <label for="nombreUsuario">Usuario</label>
+                        <input type="text" id="nombreUsuario" maxlength="50" required>
+                    </div>
+                    <div class="form-group campo-cuenta">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" minlength="6" required>
+                        <small class="form-ayuda">Mínimo 6 caracteres</small>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" required>
-                </div>
-                <div class="form-group">
-                    <label for="dni">DNI</label>
-                    <input type="text" id="dni" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="nombreUsuario">Nombre de Usuario</label>
-                    <input type="text" id="nombreUsuario" required>
-                </div>
-                <div class="form-group">
-                    <label for="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" required>
-                </div>
+                <p id="avisoEdicion" class="form-aviso">El usuario y la contraseña no se modifican desde la edición.</p>
                 <div class="modal-actions">
                     <button type="button" class="btn-secondary" onclick="cerrarModalAlumno()">Cancelar</button>
-                    <button type="submit" class="btn-primary">Guardar</button>
+                    <button type="submit" id="btnGuardar" class="btn-primary">Guardar</button>
                 </div>
             </form>
         </div>
     </div>
-   
 
-    
-    
+    <!-- MODAL: CONFIRMAR ELIMINACIÓN -->
+    <div id="modalEliminar" class="modal-overlay">
+        <div class="modal-card modal-confirm">
+            <div class="confirm-icono">⚠</div>
+            <h2>¿Estás seguro de eliminar?</h2>
+            <p id="textoEliminar">Esta acción no se puede deshacer.</p>
+            <div class="modal-actions modal-actions-center">
+                <button type="button" class="btn-secondary" onclick="cerrarModalEliminar()">Cancelar</button>
+                <button type="button" id="btnConfirmarEliminar" class="btn-danger" onclick="confirmarEliminar()">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AVISOS -->
+    <div id="toast" class="toast"></div>
 </body>
 </html>

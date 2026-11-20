@@ -18,6 +18,11 @@ namespace SistemaRepository.Services.Implementations
                 _repository = repository;
         }
 
+        public async Task<int> AlumnosRegistrados()
+        {
+           return await _repository.AlumnosRegistrados();
+        }
+
         public async Task<decimal> Porcentajedesaprobados()
         {
             return await _repository.PorcentajeDesaprobados();

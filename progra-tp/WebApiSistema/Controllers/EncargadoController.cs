@@ -10,26 +10,26 @@ namespace WebApiSistema.Controllers
     public class EncargadoController : ControllerBase
     {
 
-        private readonly IServiceEncargado _serivice;
+        private readonly IServiceEncargado _service;
 
         public EncargadoController(IServiceEncargado service)
         {
-                _serivice = service;
+                _service = service;
         }
 
         [HttpGet]
-        //[Authorize(Roles ="ENCARGADO")]
+        [Authorize(Roles ="ENCARGADO")]
         public async Task<IActionResult> GetPromedios()
         {
-            var promedios = await _serivice.TraerPromedios();
+            var promedios = await _service.TraerPromedios();
             return Ok(promedios);
         }
 
         [HttpGet("Desaprobados")]
-       // [Authorize(Roles = "ENCARGADO")]
+        [Authorize(Roles = "ENCARGADO")]
         public async Task<IActionResult> PorcentajeDesaprobados()
         {
-            var porcentaje= await _serivice.Porcentajedesaprobados();
+            var porcentaje= await _service.Porcentajedesaprobados();
             if (porcentaje == 0)
             {
                 return NotFound("No hay notas cargadas");
@@ -39,5 +39,14 @@ namespace WebApiSistema.Controllers
                 message = $"El porcentaje de desaprobados es de %",porcentaje
             });
         }
+
+        [HttpGet("Registrados")]
+        [Authorize(Roles = "ENCARGADO")]
+        public async Task<IActionResult> AlumnosRegistrados()
+        {
+            var cantidad = await _service.AlumnosRegistrados();
+            return Ok(cantidad);
+        }
+
     }
 }

@@ -59,7 +59,7 @@ namespace WebApiSistema.Controllers
 
             var alumno = new Alumno
             {
-               
+                Legajo = dto.Legajo,
                 Nombre = dto.Nombre,
                 Apellido = dto.Apellido,
                 Email = dto.Email,
@@ -68,8 +68,8 @@ namespace WebApiSistema.Controllers
             };
             var resultado = new AlumnoDto
             {
-                
-                Legajo=alumno.Legajo,
+
+                Legajo = alumno.Legajo,
                 Nombre = alumno.Nombre,
                 Apellido = alumno.Apellido,
                 Email = alumno.Email,
@@ -77,13 +77,20 @@ namespace WebApiSistema.Controllers
                 NombreUsuario = alumno.Usuario.NombreUsuario
             };
 
-            bool result=await _service.CreateAlumno(alumno);
-            if (!result)
+            try
             {
-                return BadRequest("No se ha podido crear el alumno nuevo");
+                bool result = await _service.CreateAlumno(alumno);
+                if (!result)
+                {
+                    return BadRequest($"No se ha podido crear el alumno: el legajo {dto.Legajo} ya existe");
+                }
+                return StatusCode(201, new { message = $"Se ha creado el alumno con exito", resultado });
             }
-            return StatusCode(201,new { message=$"Se ha creado el alumno con exito",resultado });
-           
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
         [HttpGet("notas")]
         public async Task<IActionResult> AlumnosNotas()
@@ -92,6 +99,7 @@ namespace WebApiSistema.Controllers
             return Ok(alumnos);
         }
         [HttpDelete("{legajo}")]
+        [Authorize(Roles = "ENCARGADO")]
         public async Task<IActionResult> DeleteAlumnmo(string legajo)
         {
             bool result = await _service.DeleteAlumno(legajo);
@@ -105,31 +113,34 @@ namespace WebApiSistema.Controllers
         }
 
         [HttpPut("{legajo}")]
-        public async Task<IActionResult> UpdateAlumno(string legajo, [FromBody] AlumnoCreateDto dto)
+        [Authorize(Roles = "ENCARGADO")]
+        public async Task<IActionResult> UpdateAlumno(string legajo, [FromBody] AlumnoUpdateDto dto)
         {
-            var alumno = new Alumno
-            {
-                Nombre = dto.Nombre,
-                Apellido = dto.Apellido,
-                Dni = dto.Dni,
-                Email = dto.Email
-            };
-
-            try
-            {
-                bool actualizado = await _service.UpdateAlumno(legajo, alumno);
-
-                if (!actualizado)
+            
+                var alumno = new Alumno
                 {
-                    return NotFound($"No se encontró el alumno con legajo: {legajo}");
-                }
+                    Nombre = dto.Nombre,
+                    Apellido = dto.Apellido,
+                    Dni = dto.Dni,
+                    Email = dto.Email
+                };
 
-                return Ok("Alumno actualizado correctamente");
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
+                try
+                {
+                    bool actualizado = await _service.UpdateAlumno(legajo, alumno);
+
+                    if (!actualizado)
+                    {
+                        return NotFound($"No se encontró el alumno con legajo: {legajo}");
+                    }
+
+                    return Ok("Alumno actualizado correctamente");
+                }
+                catch (ArgumentException ex)
+                {
+                    return BadRequest(ex.Message);
+                }
             }
         }
     }
-}
+

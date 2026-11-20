@@ -42,17 +42,27 @@ namespace SistemaRepository.Data.Implementations
 
         public async Task<bool> CreateAlumno(Alumno alumno)
         {
-            if (alumno.Legajo != null)
+            
+        
+            // El legajo es obligatorio y no puede repetirse (es la PK)
+            if (string.IsNullOrWhiteSpace(alumno.Legajo))
             {
                 return false;
             }
-          
-        
+            bool existe = await _context.Alumnos.AnyAsync(a => a.Legajo == alumno.Legajo);
+            if (existe)
+            {
+                return false;
+            }
+
             await _context.Alumnos.AddAsync(alumno);
-          
-          
+
+
             return await _context.SaveChangesAsync() > 0;
         }
+
+        
+
 
         public async Task<bool> DeleteAlumno(string legajo)
         {
