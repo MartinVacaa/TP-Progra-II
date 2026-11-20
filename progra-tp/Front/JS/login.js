@@ -6,11 +6,11 @@ btningresar.addEventListener("click", async (e) => {
     const usuario = document.getElementById("usuario").value;
     const clave = document.getElementById("contrasena").value;
 
-    console.log("Intentando conectar con:", "http://localhost:5074/api/Jwt");
+    console.log("Intentando conectar con:", "https://localhost:44387/api/Jwt");
     console.log("Enviando datos:", { UserName: usuario, Password: clave });
 
     try {
-        const response = await fetch("http://localhost:5074/api/Jwt", {
+        const response = await fetch("https://localhost:44387/api/Jwt", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -22,7 +22,6 @@ namespace WebApiSistema.Controllers
         {
                 _context = context;
         }
-
         [HttpPost]
         public IActionResult Login([FromBody] UserLoginDto user)
         {
@@ -49,7 +48,31 @@ namespace WebApiSistema.Controllers
 
             var token = GenerateToken(usuariolog);
 
-            return Ok(new { Token = token });
+            string legajo = "";
+            string nombre = usuariolog.NombreUsuario;
+            string apellido = "";
+
+            if (usuariolog.Rol == "ALUMNO")
+            {
+                var alumno = _context.Alumnos
+                    .FirstOrDefault(a => a.UsuarioId == usuariolog.Id);
+
+                if (alumno != null)
+                {
+                    legajo = alumno.Legajo;
+                    nombre = alumno.Nombre;
+                    apellido = alumno.Apellido;
+                }
+            }
+
+            return Ok(new
+            {
+                Token = token,
+                Rol = usuariolog.Rol,
+                Legajo = legajo,
+                Nombre = nombre,
+                Apellido = apellido
+            });
         }
 
         private string GenerateToken(Usuario user)
