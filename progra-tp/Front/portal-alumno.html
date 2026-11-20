@@ -19,7 +19,7 @@
                 <button class="nav-btn activo" data-seccion="inicio">📊 Resumen General</button>
                 <button class="nav-btn" data-seccion="materias">📚 Mis Materias</button>
                 <button class="nav-btn" data-seccion="notas">📝 Mis Notas</button>
-                <button class="nav-btn" data-seccion="finales">📅 Fechas de Finales</button>
+                
                 <button class="nav-btn" data-seccion="contacto">✉️ Contacto y Profesores</button>
                 <button class="nav-btn" data-seccion="tramites">📄 Trámites</button>
             </nav>
@@ -110,46 +110,7 @@
                 </div>
             </section>
 
-            <!-- SECCIÓN 4: FECHAS DE FINALES (solo visual, sin back) -->
-            <section id="sec-finales" class="seccion-vista">
-                <div class="card-tabla">
-                    <h3>Mesas de Examen Final Disponibles</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Materia</th>
-                                <th>Fecha y Hora</th>
-                                <th>Aula</th>
-                                <th>Estado</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabla-finales">
-                            <tr>
-                                <td><strong>Bases de Datos</strong></td>
-                                <td>24/11/2026 - 18:00 hs</td>
-                                <td>Lab. Informática 2</td>
-                                <td><span class="estado disponible" id="estado-final-bdd">Disponible</span></td>
-                                <td><button class="btn-accion inscribir" onclick="toggleInscripcion('final-bdd', this)">Inscribirse</button></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Programación Web I</strong></td>
-                                <td>03/12/2026 - 19:00 hs</td>
-                                <td>Aula 14</td>
-                                <td><span class="estado disponible" id="estado-final-prg">Disponible</span></td>
-                                <td><button class="btn-accion inscribir" onclick="toggleInscripcion('final-prg', this)">Inscribirse</button></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Inglés Técnico I</strong></td>
-                                <td>10/12/2026 - 17:30 hs</td>
-                                <td>Aula 08</td>
-                                <td><span class="estado promocionada" id="estado-final-ing">Inscripto</span></td>
-                                <td><button class="btn-accion anular" onclick="toggleInscripcion('final-ing', this)">Anular inscripción</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+        
 
             <!-- SECCIÓN 5: CONTACTO Y PROFESORES (solo visual) -->
             <section id="sec-contacto" class="seccion-vista">
@@ -174,21 +135,7 @@
                                 <td>Bedelía</td>
                                 <td><a href="mailto:bedelia@universidad.edu" class="link-mail">bedelia@universidad.edu</a></td>
                             </tr>
-                            <tr>
-                                <td>Programación Web I</td>
-                                <td>Ing. Carlos Gómez</td>
-                                <td><a href="mailto:carlos.gomez@universidad.edu" class="link-mail">carlos.gomez@universidad.edu</a></td>
-                            </tr>
-                            <tr>
-                                <td>Bases de Datos</td>
-                                <td>Lic. Laura Martínez</td>
-                                <td><a href="mailto:laura.martinez@universidad.edu" class="link-mail">laura.martinez@universidad.edu</a></td>
-                            </tr>
-                            <tr>
-                                <td>Matemática Discreta</td>
-                                <td>Prof. Andrés Silva</td>
-                                <td><a href="mailto:andres.silva@universidad.edu" class="link-mail">andres.silva@universidad.edu</a></td>
-                            </tr>
+                         
                         </tbody>
                     </table>
                 </div>
