@@ -80,7 +80,15 @@
                 <div class="form-grid">
                     <div class="form-group form-group-full">
                         <label for="legajo">Legajo</label>
-                        <input type="text" id="legajo" maxlength="20" required>
+                        <input
+                         type="text"
+                            id="legajo"
+                        maxlength="6"
+                pattern="L-[0-9]{4}"
+                    title="El legajo debe tener el formato L-0001"
+                        placeholder="L-0001"
+                        required
+                        >
                     </div>
                     <div class="form-group">
                         <label for="nombre">Nombre</label>

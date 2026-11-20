@@ -4,7 +4,10 @@ namespace WebApiSistema.DTO
 {
     public class AlumnoCreateDto
     {
-        [Required, MaxLength(20)] public string Legajo { get; set; } = null!;
+        [Required]
+        [RegularExpression(@"^L-[0-9]{4}$",
+      ErrorMessage = "El legajo debe tener el formato L-0001")]
+        public string Legajo { get; set; } = null!;
         [Required, MaxLength(50)] public string Nombre { get; set; } = null!;
         [Required, MaxLength(50)] public string Apellido { get; set; } = null!;
         [Required, MaxLength(10)] public string Dni { get; set; } = null!;
